@@ -19,4 +19,4 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.config.media_vol_steps=15
+    ro.config.media_vol_steps=25
