@@ -61,6 +61,10 @@ on property:sys.boot_completed=1
     write /dev/blkio/blkio.group_idle 2000
     write /dev/blkio/background/blkio.group_idle 0
 
+    # Enable idle state listener
+    write /sys/class/drm/card0/device/idle_encoder_mask 1
+    write /sys/class/drm/card0/device/idle_timeout_ms 100
+
 on early-init
     # configure governor settings
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
