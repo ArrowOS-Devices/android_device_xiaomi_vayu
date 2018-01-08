@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,11 +41,12 @@ for index, line in enumerate(lines):
     if needSHA1:
         # Remove existing SHA1 hash
         line = line.split('|')[0]
+        filePath = line.split(':')[1] if len(line.split(':')) == 2 else line
 
-        if line[0] == '-':
-            file = open('%s/%s' % (vendorPath, line[1:]), 'rb').read()
+        if filePath[0] == '-':
+            file = open('%s/%s' % (vendorPath, filePath[1:]), 'rb').read()
         else:
-            file = open('%s/%s' % (vendorPath, line), 'rb').read()
+            file = open('%s/%s' % (vendorPath, filePath), 'rb').read()
 
         hash = sha1(file).hexdigest()
         lines[index] = '%s|%s\n' % (line, hash)
