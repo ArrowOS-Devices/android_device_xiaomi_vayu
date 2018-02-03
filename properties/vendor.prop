@@ -173,10 +173,6 @@ debug.stagefright.omx_default_rank=0
 # PASR
 vendor.power.pasr.enabled=false
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf.scroll_opt=true
-
 # Radio/RIL
 persist.radio.dynamic_sar=false
 persist.radio.multisim.config=dsds
