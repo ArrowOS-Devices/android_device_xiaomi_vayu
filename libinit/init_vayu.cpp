@@ -112,6 +112,12 @@ void set_device_props(const std::string fingerprint, const std::string descripti
     property_override("ro.build.description", description.c_str());
     property_override("ro.bootimage.build.fingerprint", fingerprint.c_str());
     property_override("ro.system_ext.build.fingerprint", fingerprint.c_str());
+    property_override("ro.com.google.clientidbase", "android-xiaomi");
+    property_override("ro.com.google.clientidbase.ax", "android-xiaomi-rvo3");
+    property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rvo3");
+    property_override("ro.com.google.clientidbase.tx", "android-xiaomi-rvo3");
+    property_override("ro.com.google.clientidbase.vs", "android-xiaomi-rvo3");
+
 }
 
 void vendor_load_properties() {
