@@ -20,7 +20,6 @@ persist.vendor.cne.feature=1
 persist.vendor.camera.facepp.fdenable=0
 
 # Display
-ro.sf.lcd_density=440
 ro.surface_flinger.set_display_power_timer_ms=1000
 ro.surface_flinger.set_idle_timer_ms=200
 ro.surface_flinger.set_touch_timer_ms=200
