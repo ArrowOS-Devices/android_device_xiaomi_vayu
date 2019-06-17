@@ -25,4 +25,7 @@
 
     <!-- Show the network traffic monitor on statusbar even if the device has a notch -->
     <bool name="config_forceShowNetworkTrafficOnStatusBar">true</bool>
+
+    <!-- For how long the lock screen can be on before the display turns off. -->
+    <integer name="config_lockScreenDisplayTimeout">7000</integer>
 </resources>
