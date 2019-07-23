@@ -88,8 +88,16 @@ $(EGL64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf egl/libEGL_adreno.so $@/libEGL_adreno.so
 	$(hide) ln -sf egl/libGLESv2_adreno $@/libGLESv2_adreno
 
+WIFI_FIRMWARE_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/
+$(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating wifi firmware symlinks: $@"
+	mkdir -p $@
+	$(hide) ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
+	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan_mac.bin
+
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(BT_FIRMWARE_MOUNT_POINT) $(DSP_MOUNT_POINT)
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_CDSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS)
 ALL_DEFAULT_INSTALLED_MODULES += $(EGL_SYMLINKS) $(EGL64_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(WIFI_FIRMWARE_SYMLINKS)
 
 endif
