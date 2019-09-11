@@ -176,6 +176,9 @@ on boot
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
+on property:sys.boot_completed=1
+    rm /data/unencrypted/zram_swap
+
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
