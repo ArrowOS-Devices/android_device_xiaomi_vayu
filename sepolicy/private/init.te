@@ -1,4 +1,3 @@
-# Allow init to bind mount over vendor file
 allow init vendor_file:file mounton;
 
 # Allow init to mount vendor configs
@@ -10,4 +9,3 @@ allow init vendor_overlay_file:dir mounton;
 
 # Allow init to write to sysfs_graphics
 allow init sysfs_graphics:file w_file_perms;
-
