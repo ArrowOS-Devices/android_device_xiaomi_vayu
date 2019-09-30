@@ -160,7 +160,6 @@ vendor/lib64/camera/fdconfigvideo.bin
 vendor/lib64/camera/fdconfigvideolite.bin
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
-vendor/lib64/libdng_sdk.so
 vendor/lib64/libalAILDC.so
 vendor/lib64/libalhLDC.so
 vendor/lib64/libalLDC.so
