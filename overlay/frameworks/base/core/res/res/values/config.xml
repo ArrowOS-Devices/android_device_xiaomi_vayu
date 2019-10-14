@@ -773,4 +773,7 @@
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">3000</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+
+    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
+    <bool name="config_zramWriteback">true</bool>
 </resources>
