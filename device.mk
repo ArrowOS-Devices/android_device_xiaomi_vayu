@@ -34,4 +34,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.vayu.rc
 
+# NFC
+PRODUCT_PACKAGES += \
+    NfcNci \
+    Tag \
+    SecureElement \
+    com.android.nfc_extras
+
 include vendor/xiaomi/vayu/vayu-vendor.mk
