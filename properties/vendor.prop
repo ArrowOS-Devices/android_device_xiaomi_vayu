@@ -198,6 +198,7 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sar_sar_sensor=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+ro.telephony.iwlan_operation_mode=legacy
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
