@@ -31,6 +31,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService-Soong
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
