@@ -96,6 +96,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
+# Sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_VBMETA_SYSTEM := system system_ext
