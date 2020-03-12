@@ -1,3 +1,7 @@
+# ART
+dalvik.vm.dex2oat-filter=everything
+dalvik.vm.image-dex2oat-filter=everything
+
 # Bluetooth
 vendor.bluetooth.soc=cherokee
 
