@@ -64,4 +64,11 @@ PRODUCT_PACKAGES += \
     SecureElement \
     com.android.nfc_extras
 
+# Overlays - override vendor ones
+PRODUCT_PACKAGES += \
+    FrameworksResCommon \
+    FrameworksResTarget \
+    DevicesOverlay \
+    DevicesAndroidOverlay
+
 include vendor/xiaomi/vayu/vayu-vendor.mk
