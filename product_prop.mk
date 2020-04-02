@@ -17,6 +17,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+# Camera
+PRODUCT_PRODUCT_PROPERTIES += \
+    vendor.camera.aux.packagelist=org.lineageos.snap,net.sourceforge.opencamera,org.codeaurora.snapcam
+
 # Dex2oat
 PRODUCT_PRODUCT_PROPERTIES += \
      dalvik.vm.dex2oat64.enabled=true
