@@ -99,6 +99,10 @@ PRODUCT_PACKAGES += \
     DevicesOverlay \
     DevicesAndroidOverlay
 
+# WiFi
+PRODUCT_PACKAGES += \
+    WifiOverlay
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libavservices_minijail \
