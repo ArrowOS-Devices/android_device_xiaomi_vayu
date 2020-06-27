@@ -1,3 +1,13 @@
 on post-fs
     mount none /system/lib/libvolumelistener.so /vendor/lib/soundfx/libvolumelistener.so bind
     mount none /system/lib64/libvolumelistener.so /vendor/lib64/soundfx/libvolumelistener.so bind
+
+   # Disable some debug services
+on property:init.svc.cnss_diag=running
+    stop cnss_diag
+
+on property:init.svc.tcpdump=running
+    stop tcpdump
+
+on property:init.svc.vendor.ipacm-diag=running
+    stop vendor.ipacm-diag
