@@ -33,8 +33,14 @@ function blob_fixup() {
             sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
             ;;
         vendor/etc/qdcm_calib_data_xiaomi_36_02_0a_video_mode_dsc_dsi_panel.xml | vendor/etc/qdcm_calib_data_xiaomi_42_02_0b_video_mode_dsc_dsi_panel.xml)
-        sed -i "s/dcip3/srgb/" "${2}"
-        ;;
+            sed -i "s/dcip3/srgb/" "${2}"
+            ;;
+
+        vendor/lib64/hw/camera.qcom.so)
+            patchelf --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
+            patchelf --remove-needed "libmegface.so" "${2}"
+            patchelf --add-needed "libshim_megvii.so" "${2}"
+            ;;
     esac
 }
 

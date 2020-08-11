@@ -174,8 +174,6 @@ vendor/lib64/libdualcam_video_optical_zoom.so
 vendor/lib64/libft2vendor.so
 vendor/lib64/libFaceGrade.so
 vendor/lib64/libHalSuperSensorServer.so
-vendor/lib64/libmegface.so
-vendor/lib64/libMegviiFacepp-0.5.2.so
 vendor/lib64/libmialgoengine.so
 vendor/lib64/libmialgo_fs.so
 vendor/lib64/libmialgo_ie_capture.so
