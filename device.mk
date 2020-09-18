@@ -290,8 +290,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti \
-    lights.msmnile
+    android.hardware.lights-service.vayu
 
 # Media
 PRODUCT_PACKAGES += \
