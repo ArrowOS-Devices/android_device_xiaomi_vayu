@@ -17,6 +17,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+# Graphics
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.hwui.renderer=skiavk
+
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.vc_call_vol_steps=7 \
