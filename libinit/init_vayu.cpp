@@ -51,5 +51,24 @@ void property_override(char const prop[], char const value[], bool add = true) {
     }
 }
 
+void full_property_override(const std::string &prop, const char value[]) {
+    const int prop_count = 6;
+    const std::vector<std::string> prop_types
+        {"", "odm.", "product.", "system.", "system_ext.", "vendor."};
+
+    for (int i = 0; i < prop_count; i++) {
+        std::string prop_name = "ro." + prop_types[i] + prop;
+        property_override(prop_name.c_str(), value);
+    }
+}
+
 void vendor_load_properties() {
+    // Safetyet Workaround
+    const char *fingerprint = "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys";
+    const char *description = "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys";
+
+    full_property_override("build.fingerprint", fingerprint);
+    full_property_override("build.description", description);
+
+    property_override("ro.boot.verifiedbootstate", "green");
 }
