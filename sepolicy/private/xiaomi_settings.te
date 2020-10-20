@@ -24,6 +24,12 @@ allow xiaomi_settings hal_displayfeature_xiaomi_hwservice:hwservice_manager find
 # Allow binder communication with hal_displayfeature_xiaomi_default
 binder_call(xiaomi_settings, hal_displayfeature_xiaomi_default)
 
+# Allow xiaomi_settings to find hal_touchfeature_xiaomi_hwservice
+allow xiaomi_settings hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+
+# Allow binder communication with hal_touchfeature_xiaomi_default
+binder_call(xiaomi_settings, hal_touchfeature_xiaomi_default)
+
 # Allow binder communication with gpuservice
 binder_call(xiaomi_settings, gpuservice)
 
