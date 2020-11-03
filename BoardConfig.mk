@@ -77,9 +77,9 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_SECOND_OFFSET := 0x00f00000
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0
-BOARD_KERNEL_CMDLINE += androidboot.memcg=1 lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.memcg=1
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
+BOARD_KERNEL_CMDLINE += swiotlb=2048 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_PAGESIZE := 4096
