@@ -15,6 +15,10 @@ persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 ro.config.low_ram=false
 ro.lmk.log_stats=true
 
+# Transcoding related property.
+debug.media.transcoding.codec_max_operating_rate_720P=240
+debug.media.transcoding.codec_max_operating_rate_1080P=120
+
 # Zram
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
