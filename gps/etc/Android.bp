@@ -1,25 +1,3 @@
-
-prebuilt_etc {
-
-    name: "gps.conf",
-    vendor: true,
-    src: "gps.conf",
-}
-
-prebuilt_etc {
-
-    name: "flp.conf",
-    vendor: true,
-    src: "flp.conf",
-}
-
-prebuilt_etc {
-
-    name: "gnss_antenna_info.conf",
-    vendor: true,
-    src: "gnss_antenna_info.conf",
-}
-
 prebuilt_etc {
     name: "gnss@2.0-base.policy",
     vendor: true,
