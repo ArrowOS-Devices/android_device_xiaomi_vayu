@@ -32,6 +32,15 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    libaacwrapper
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
+
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 
