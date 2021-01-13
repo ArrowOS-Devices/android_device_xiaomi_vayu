@@ -26,3 +26,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.vc_call_vol_steps=7 \
     ro.config.media_vol_steps=25
+
+# Telephony
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.vendor.ims.disableADBLogs=1 \
+    persist.vendor.ims.disableDebugLogs=1 \
+    persist.vendor.ims.disableIMSLogs=1 \
+    persist.vendor.ims.disableQXDMLogs=1
+
