@@ -10,6 +10,9 @@ debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 ro.sf.lcd_density=440
 
+# GBoard
+ro.com.google.ime.kb_pad_port_b=1
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
