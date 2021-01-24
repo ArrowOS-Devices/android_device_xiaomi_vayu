@@ -87,6 +87,9 @@ public class TouchSettingsFragment extends PreferenceFragment
         if (Constants.PREF_TOUCH_GAME_MODE.equals(key)) {
             updateTouchModes(sharedPrefs.getBoolean(key, false) ? 1 : 0,
                     Constants.TOUCH_GAME_MODE);
+            mTouchSensitivity.setEnabled(sharedPrefs.getBoolean(key, false));
+            mTouchResponse.setEnabled(sharedPrefs.getBoolean(key, false));
+            mTouchResistant.setEnabled(sharedPrefs.getBoolean(key, false));
         } else if (Constants.PREF_TOUCH_RESPONSE.equals(key)) {
             updateTouchModes(sharedPrefs.getInt(key, 0), Constants.TOUCH_RESPONSE);
         } else if (Constants.PREF_TOUCH_SENSITIVITY.equals(key)) {
@@ -102,6 +105,10 @@ public class TouchSettingsFragment extends PreferenceFragment
         mTouchResponse.setProgress(Integer.parseInt(values[Constants.TOUCH_RESPONSE]));
         mTouchSensitivity.setProgress(Integer.parseInt(values[Constants.TOUCH_SENSITIVITY]));
         mTouchResistant.setProgress(Integer.parseInt(values[Constants.TOUCH_RESISTANT]));
+
+        mTouchResponse.setEnabled(Integer.parseInt(values[Constants.TOUCH_GAME_MODE]) == 1);
+        mTouchSensitivity.setEnabled(Integer.parseInt(values[Constants.TOUCH_GAME_MODE]) == 1);
+        mTouchResistant.setEnabled(Integer.parseInt(values[Constants.TOUCH_GAME_MODE]) == 1);
     }
 
     private void writeTouchValues(String modes) {

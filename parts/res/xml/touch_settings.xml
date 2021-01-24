@@ -30,23 +30,23 @@
             android:title="@string/touch_response_title"
             android:summary="@string/touch_response_summary"
             android:layout="@layout/preference_slider"
-            android:defaultValue="@integer/smoothness_default"
-            android:max="@integer/smoothness_max" />
+            android:defaultValue="@integer/touch_response_default"
+            android:max="@integer/touch_response_max" />
 
         <org.lineageos.settings.widget.SeekBarPreference
             android:key="touch_sensitivity"
             android:title="@string/touch_sensitivity_title"
             android:summary="@string/touch_sensitivity_summary"
             android:layout="@layout/preference_slider"
-            android:defaultValue="@integer/smoothness_default"
-            android:max="@integer/smoothness_max" />
+            android:defaultValue="@integer/touch_sensitivity_default"
+            android:max="@integer/touch_sensitivity_max" />
 
         <org.lineageos.settings.widget.SeekBarPreference
             android:key="touch_resistant"
             android:title="@string/touch_resistant_title"
             android:summary="@string/touch_resistant_summary"
             android:layout="@layout/preference_slider"
-            android:defaultValue="@integer/smoothness_default"
-            android:max="@integer/smoothness_max" />
+            android:defaultValue="@integer/touch_resistant_default"
+            android:max="@integer/touch_resistant_max" />
     </PreferenceCategory>
 </PreferenceScreen>

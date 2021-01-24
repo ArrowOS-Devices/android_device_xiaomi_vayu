@@ -16,7 +16,13 @@
 -->
 
 <resources>
-    <integer name="smoothness_default">0</integer>
-    <integer name="smoothness_min">0</integer>
-    <integer name="smoothness_max">3</integer>
+    <!-- Gaming Profiles -->
+    <integer name="touch_response_default">35</integer>
+    <integer name="touch_response_max">50</integer>
+
+    <integer name="touch_sensitivity_default">0</integer>
+    <integer name="touch_sensitivity_max">255</integer>
+
+    <integer name="touch_resistant_default">2</integer>
+    <integer name="touch_resistant_max">3</integer>
 </resources>

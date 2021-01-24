@@ -214,13 +214,11 @@ public final class ThermalUtils {
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, touchActiveMode);
         } catch (RemoteException e) {
             // Do nothing
         }
 
         mTouchModeChanged = true;
-        updateTouchRotation();
     }
 
     protected void resetTouchModes() {
@@ -230,43 +228,13 @@ public final class ThermalUtils {
 
         try {
             mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_GAME_MODE);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE);
             mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD);
             mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_TOLERANCE);
             mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_EDGE_FILTER);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_ROTATION);
         } catch (RemoteException e) {
             // Do nothing
         }
 
         mTouchModeChanged = false;
-    }
-
-    protected void updateTouchRotation() {
-        if (!mTouchModeChanged) {
-            return;
-        }
-
-        int touchRotation = 0;
-        switch (mDisplay.getRotation()) {
-            case Surface.ROTATION_0:
-                touchRotation = 0;
-                break;
-            case Surface.ROTATION_90:
-                touchRotation = 1;
-                break;
-            case Surface.ROTATION_180:
-                touchRotation = 2;
-                break;
-            case Surface.ROTATION_270:
-                touchRotation = 3;
-                break;
-        }
-
-        try {
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ROTATION, touchRotation);
-        } catch (RemoteException e) {
-            // Do nothing
-        }
     }
 }
