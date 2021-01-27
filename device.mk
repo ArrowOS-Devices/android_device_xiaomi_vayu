@@ -112,6 +112,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     TelephonyResVayu
 
+# KeyHandler
+PRODUCT_PACKAGES += \
+    KeyHandler
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
