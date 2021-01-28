@@ -15,9 +15,6 @@ persist.vendor.cne.feature=1
 # Camera
 persist.vendor.camera.facepp.fdenable=0
 
-# Dex2oat
-dalvik.vm.dex2oat64.enabled=true
-
 # Display
 ro.surface_flinger.set_display_power_timer_ms=1000
 ro.surface_flinger.set_idle_timer_ms=200
