@@ -105,5 +105,30 @@
             android:name=".thermal.ThermalService"
             android:permission="ThermalService">
         </service>
+<<<<<<< HEAD:parts/AndroidManifest.xml
+=======
+
+        <activity
+            android:name=".haptic.HapticLevelActivity"
+            android:label="@string/haptic_title"
+            android:theme="@style/Theme.Main">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.sound" />
+        </activity>
+
+        <service
+            android:name=".RefreshRateTileService"
+            android:icon="@drawable/ic_qs_refresh_rate"
+            android:label="@string/refresh_rate_tile_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+>>>>>>> 8796e09 (vayu: parts: Introduce Refresh Rate QS tile):AndroidManifest.xml
     </application>
 </manifest>
