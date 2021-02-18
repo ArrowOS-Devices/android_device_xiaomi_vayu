@@ -27,6 +27,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     vendor.display.disable_rotator_downscale=1
 
+# LMKD
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.low_ram=false \
+    ro.lmk.log_stats=true
+
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.vc_call_vol_steps=7 \
