@@ -35,4 +35,12 @@ def OTA_InstallEnd(info):
   info.script.Print("Patching firmware images...")
   AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
   AddImage(info, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
+
+  # device checks
+  info.script.Print("Performing device checks for NFC...")
+  DeviceChecks(info, "device_nfc_check.sh", "system", "ext4")
+  return
+
+def DeviceChecks(info, name, partition, fs_type):
+  info.script.AppendExtra(('run_program("/tmp/install/bin/%s", map_partition("%s"), "%s");' % (name, partition, fs_type)))
   return
