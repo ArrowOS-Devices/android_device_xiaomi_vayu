@@ -206,6 +206,10 @@ persist.vendor.radio.sar_sar_sensor=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.iwlan_operation_mode=legacy
 
+# SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SM8150
+
 # System Shutdown
 sys.vendor.shutdown.waittime=500
 
