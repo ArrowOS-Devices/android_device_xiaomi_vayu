@@ -52,5 +52,20 @@
 
     <!-- Disable WPA2 to WPA3 auto-upgrade -->
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
+
+    <!-- Wifi driver supports WPA3 Simultaneous Authentication of Equals (WPA3-SAE) for softap -->
+    <bool name="config_wifi_softap_sae_supported">true</bool>
+
+    <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
+    <bool translatable="false" name="config_wifiSoftapAcsIncludeDfs">true</bool>
+
+    <!-- Integer indicating maximum hardware supported client number of soft ap -->
+    <integer translatable="false" name="config_wifiHardwareSoftapMaxClientCount">32</integer>
+
+    <!-- Boolean indicating that wifi only link configuratios that have exact same credentials (i.e PSK) -->
+    <bool translatable="false" name="config_wifi_only_link_same_credential_configurations">false</bool>
+
+    <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
+    <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
 </resources>
 
