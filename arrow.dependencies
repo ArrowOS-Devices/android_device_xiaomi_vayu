@@ -1,9 +1,5 @@
 [
   {
-    "repository": "android_device_xiaomi_extras",
-    "target_path": "device/xiaomi/extras"
-  },
-  {
     "repository": "android_vendor_xiaomi_vayu",
     "target_path": "vendor/xiaomi/vayu"
   },
