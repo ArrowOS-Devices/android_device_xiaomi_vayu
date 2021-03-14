@@ -1,0 +1,3 @@
+# SoundFX - from LA.UM.8.9.r1-08400-SM6xx.0
+vendor/lib/soundfx/libvolumelistener.so:system/lib/libvolumelistener.so|672ad577dab5221bdd7f840d87313e3483aebde0
+vendor/lib64/soundfx/libvolumelistener.so:system/lib64/libvolumelistener.so|c25cc5e8c3622eb97d3bb4814aeb301c01d8b046
