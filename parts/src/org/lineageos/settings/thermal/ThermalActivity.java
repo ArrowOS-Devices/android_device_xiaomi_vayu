@@ -19,15 +19,20 @@ package org.lineageos.settings.thermal;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
+import org.lineageos.settings.utils.FileUtils;
+
 public class ThermalActivity extends PreferenceActivity {
 
     private static final String TAG_THERMAL = "thermal";
+    private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new ThermalSettingsFragment(), TAG_THERMAL).commit();
+        if (FileUtils.fileExists(THERMAL_SCONFIG)) {
+            getFragmentManager().beginTransaction().replace(android.R.id.content,
+                    new ThermalSettingsFragment(), TAG_THERMAL).commit();
+        }
     }
 }

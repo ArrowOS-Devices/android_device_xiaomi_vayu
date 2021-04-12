@@ -36,24 +36,7 @@ public class ThermalService extends Service {
 
     private String mPreviousApp;
     private ThermalUtils mThermalUtils;
-    private final TaskStackListener mTaskListener = new TaskStackListener() {
-        @Override
-        public void onTaskStackChanged() {
-            try {
-                final ActivityManager.StackInfo focusedStack =
-                        ActivityTaskManager.getService().getFocusedStackInfo();
-                if (focusedStack != null && focusedStack.topActivity != null) {
-                    ComponentName taskComponentName = focusedStack.topActivity;
-                    String foregroundApp = taskComponentName.getPackageName();
-                    if (!foregroundApp.equals(mPreviousApp)) {
-                        mThermalUtils.setThermalProfile(foregroundApp);
-                        mPreviousApp = foregroundApp;
-                    }
-                }
-            } catch (Exception e) {
-            }
-        }
-    };
+
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -91,4 +74,22 @@ public class ThermalService extends Service {
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         this.registerReceiver(mIntentReceiver, filter);
     }
+
+    private final TaskStackListener mTaskListener = new TaskStackListener() {
+        @Override
+        public void onTaskStackChanged() {
+            try {
+                final ActivityManager.StackInfo focusedStack =
+                        ActivityTaskManager.getService().getFocusedStackInfo();
+                if (focusedStack != null && focusedStack.topActivity != null) {
+                    ComponentName taskComponentName = focusedStack.topActivity;
+                    String foregroundApp = taskComponentName.getPackageName();
+                    if (!foregroundApp.equals(mPreviousApp)) {
+                        mThermalUtils.setThermalProfile(foregroundApp);
+                        mPreviousApp = foregroundApp;
+                    }
+                }
+            } catch (Exception e) {}
+        }
+    };
 }
