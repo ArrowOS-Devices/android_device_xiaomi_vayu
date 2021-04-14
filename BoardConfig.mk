@@ -94,6 +94,10 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_BOARD_PLATFORM := msmnile
 BOARD_USES_QCOM_HARDWARE := true
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_vayu
 TARGET_RECOVERY_DEVICE_MODULES := libinit_vayu

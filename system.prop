@@ -1,0 +1,34 @@
+# Bluetooth
+vendor.bluetooth.soc=cherokee
+
+# Display
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+ro.sf.lcd_density=440
+
+# IMS
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.stagefright.thumbnail.prefer_hw_codecs=true
+vendor.mm.enable.qcom_parser=131071999
+
+# Radio
+ro.telephony.default_network=33,33
+
+# Netmgr
+persist.vendor.data.iwlan.enable=true
+persist.vendor.data.mode=concurrent
+
+# Netflix custom property
+ro.netflix.bsp_rev=Q855-16947-1
+
+# SSR
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Vendor
+ro.vendor.qti.va_aosp.support=1
+
