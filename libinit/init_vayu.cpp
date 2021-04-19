@@ -92,14 +92,14 @@ void set_device_props(const std::string fingerprint, const std::string descripti
                                       const std::string &prop,
                                       const std::string &value) {
         auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
+        property_override(prop_name.c_str(), value.c_str(), true);
     };
 
     const auto set_ro_product_prop = [](const std::string &source,
                                         const std::string &prop,
                                         const std::string &value) {
         auto prop_name = "ro.product." + source + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
+        property_override(prop_name.c_str(), value.c_str(), true);
     };
 
     for (const auto &source : ro_props_default_source_order) {
