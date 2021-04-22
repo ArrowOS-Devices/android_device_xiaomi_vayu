@@ -33,11 +33,15 @@
 #include <aidl/android/hardware/power/BnPower.h>
 #include "power-common.h"
 
+#include <vendor/xiaomi/hardware/touchfeature/1.0/ITouchFeature.h>
+
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace power {
 namespace impl {
+
+using ::vendor::xiaomi::hardware::touchfeature::V1_0::ITouchFeature;
 
 class Power : public BnPower {
     public:
