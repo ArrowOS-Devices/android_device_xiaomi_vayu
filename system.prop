@@ -28,7 +28,6 @@ persist.dbg.wfc_avail_ovr=1
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=131071999
-ro.config.media_vol_steps=15
 
 # Radio
 ro.telephony.default_network=33,33

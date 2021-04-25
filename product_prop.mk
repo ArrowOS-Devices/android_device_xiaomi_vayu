@@ -16,3 +16,7 @@ endif
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
+
+# Media
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.media_vol_steps=15
