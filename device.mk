@@ -96,4 +96,17 @@ PRODUCT_PACKAGES += \
     DevicesOverlay \
     DevicesAndroidOverlay
 
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libdisplayconfig.qti \
+    libminijail \
+    libnl \
+    libqdMetaData \
+    libwfdaac_vendor \
+    vendor.display.config@2.0
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 include vendor/xiaomi/vayu/vayu-vendor.mk
