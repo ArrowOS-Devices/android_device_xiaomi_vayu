@@ -23,6 +23,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
+    debug.sf.disable_backpressure=1 \
     debug.hwui.renderer=skiavk \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     vendor.display.disable_rotator_downscale=1
@@ -37,10 +38,27 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.vc_call_vol_steps=7 \
     ro.config.media_vol_steps=25
 
-# Telephony
+# RIL
 PRODUCT_PRODUCT_PROPERTIES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.NO_STAPA=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
     persist.vendor.ims.disableADBLogs=1 \
     persist.vendor.ims.disableDebugLogs=1 \
     persist.vendor.ims.disableIMSLogs=1 \
     persist.vendor.ims.disableQXDMLogs=1
 
+# Telephony
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.telephony.default_network=33,33 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
+# WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.latch_unsignaled=1 \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0

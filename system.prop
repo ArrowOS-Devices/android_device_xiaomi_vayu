@@ -12,29 +12,24 @@ ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 
 # Display
-debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=1
 ro.sf.lcd_density=440
 
 # GBoard
 ro.com.google.ime.kb_pad_port_b=1
 
-# IMS
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=131071999
-
-# Radio
-ro.telephony.default_network=33,33
+debug.stagefright.ccodec=1
+ro.media.recorder-max-base-layer-fps=60
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
+
+# NTP Server backup
+persist.backup.ntpServer="0.pool.ntp.org"
 
 # Netflix custom property
 ro.netflix.bsp_rev=Q855-16947-1
@@ -42,11 +37,11 @@ ro.netflix.bsp_rev=Q855-16947-1
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
 # Vendor
 ro.vendor.qti.va_aosp.support=1
-
-# WiFi Display
-persist.debug.wfd.enable=1
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
