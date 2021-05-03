@@ -119,6 +119,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.0
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.vayu
+
 # Releasetool scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/device_nfc_check.sh:install/bin/device_nfc_check.sh
