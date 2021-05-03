@@ -412,7 +412,7 @@
          If a non-zero value is set for config_defaultPeakRefreshRate, then
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
-    <integer name="config_defaultRefreshRate">90</integer>
+    <integer name="config_defaultRefreshRate">120</integer>
 
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
