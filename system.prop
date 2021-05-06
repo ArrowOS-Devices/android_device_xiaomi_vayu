@@ -27,6 +27,9 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=131071999
 debug.stagefright.ccodec=1
 
+# Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Netmgr
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
