@@ -1,6 +1,14 @@
 [
   {
-    "repository": "android_packages_apps_GcamGOPrebuilt",
-    "target_path": "packages/apps/GcamGOPrebuilt"
+    "repository": "android_device_xiaomi_vayu-prebuilt",
+    "target_path": "device/xiaomi/vayu-prebuilt"
+  },
+  {
+    "repository": "android_vendor_xiaomi_vayu",
+    "target_path": "vendor/xiaomi/vayu"
+  },
+  {
+    "repository": "android_packages_apps_GCamGOPrebuilt",
+    "target_path": "packages/apps/GCamGOPrebuilt"
   }
 ]
