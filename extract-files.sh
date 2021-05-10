@@ -37,9 +37,9 @@ function blob_fixup() {
             ;;
 
         vendor/lib64/hw/camera.qcom.so)
-            patchelf --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
-            patchelf --remove-needed "libmegface.so" "${2}"
-            patchelf --add-needed "libshim_megvii.so" "${2}"
+            $PATCHELF_TOOL --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
+            $PATCHELF_TOOL --remove-needed "libmegface.so" "${2}"
+            $PATCHELF_TOOL --add-needed "libshim_megvii.so" "${2}"
             ;;
     esac
 }
@@ -68,6 +68,25 @@ while [ "${#}" -gt 0 ]; do
     esac
     shift
 done
+
+# Get the host OS
+HOST="$(uname | tr '[:upper:]' '[:lower:]')"
+PATCHELF_TOOL="${ANDROID_ROOT}/prebuilts/tools-extras/${HOST}-x86/bin/patchelf"
+
+# Check if prebuilt patchelf exists
+if [ -f $PATCHELF_TOOL ]; then
+    echo "Using prebuilt patchelf at $PATCHELF_TOOL"
+else
+    # If prebuilt patchelf does not exist, use patchelf from PATH
+    PATCHELF_TOOL="patchelf"
+fi
+
+# Do not continue if patchelf is not installed
+if [[ $(which patchelf) == "" ]] && [[ $PATCHELF_TOOL == "patchelf" ]] && [[ $FORCE != "true" ]]; then
+    echo "The script will not be able to do blob patching as patchelf is not installed."
+    echo "Run the script with the argument -f or --force to bypass this check"
+    exit 1
+fi
 
 if [ -z "${SRC}" ]; then
     SRC="adb"
