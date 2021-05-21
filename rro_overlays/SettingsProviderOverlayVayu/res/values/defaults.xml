@@ -17,6 +17,8 @@
  */
 -->
 <resources>
+    <!-- Default for Settings.Global.DEVICE_NAME $1=MODEL-->
+    <string name="def_device_name_simple">POCO X3 Pro</string>
 
     <!-- Disable UI touch sounds by default -->
     <bool name="def_sound_effects_enabled">false</bool>
