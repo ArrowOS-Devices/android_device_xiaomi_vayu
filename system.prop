@@ -26,7 +26,6 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vendor.mm.enable.qcom_parser=131071999
 debug.stagefright.ccodec=1
-ro.media.recorder-max-base-layer-fps=60
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
