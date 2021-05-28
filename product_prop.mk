@@ -28,7 +28,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.disable_backpressure=1 \
-    debug.hwui.renderer=skiavk \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     vendor.display.disable_rotator_downscale=1
 
