@@ -17,20 +17,11 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Shipping level
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# Dynamic partitions setup
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd \
-    android.hardware.fastboot@1.0-impl-mock
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 30
 
-# Properties
-include $(LOCAL_PATH)/product_prop.mk
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
+# Dynamic partitions setup
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -42,8 +33,8 @@ PRODUCT_PACKAGES += \
     libaacwrapper
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -55,6 +46,10 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 # DeviceSettings
 PRODUCT_PACKAGES += \
     XiaomiParts
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
 
 # FM
 PRODUCT_PACKAGES += \
@@ -93,11 +88,7 @@ PRODUCT_COPY_FILES += \
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/usr/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-goodix.idc \
-    $(LOCAL_PATH)/usr/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
     $(LOCAL_PATH)/usr/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/usr/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/usr/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl \
     $(LOCAL_PATH)/usr/keylayout/sm8150-tavil-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sm8150-tavil-snd-card_Button_Jack.kl
 
 
@@ -136,10 +127,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Telephony
-PRODUCT_PACKAGES += \
-    TelephonyResVayu
-
 # KeyHandler
 PRODUCT_PACKAGES += \
     KeyHandler
@@ -150,13 +137,6 @@ PRODUCT_PACKAGES += \
     Tag \
     SecureElement \
     com.android.nfc_extras
-
-# Overlays - override vendor ones
-PRODUCT_PACKAGES += \
-    FrameworksResCommon \
-    FrameworksResTarget \
-    DevicesOverlay \
-    DevicesAndroidOverlay
 
 # WiFi
 PRODUCT_PACKAGES += \

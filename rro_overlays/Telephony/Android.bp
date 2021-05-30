@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "TelephonyResVayu",
-    system_ext_specific: true,
-    sdk_version: "current",
-}

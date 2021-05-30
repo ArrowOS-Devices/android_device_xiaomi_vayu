@@ -1,0 +1,201 @@
+# Audio
+aaudio.hw_burst_min_usec=2000
+aaudio.mmap_exclusive_policy=2
+aaudio.mmap_policy=2
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.tmic.enabled=false
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicecomm=true
+persist.vendor.audio.fluence.voicerec=false
+persist.vendor.audio.hifi=false
+persist.vendor.audio.ras.enabled=false
+persist.vendor.audio.ring.filter.mask=0
+persist.vendor.audio.voicecall.speaker.stereo=true
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=11
+ro.vendor.audio.game.effect=true
+ro.vendor.audio.hifi=true
+ro.vendor.audio.ring.filter=true
+ro.vendor.audio.sdk.fluencetype=fluence
+ro.vendor.audio.sdk.ssr=false
+ro.vendor.audio.sfx.earadj=true
+ro.vendor.audio.sos=true
+ro.vendor.audio.soundfx.type=mi
+ro.vendor.audio.soundfx.usb=true
+ro.vendor.audio.us.proximity=false
+ro.vendor.audio.voice.change.support=true
+ro.vendor.audio.voice.volume.boost=manual
+vendor.audio.adm.buffering.ms=6
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
+vendor.audio.enable.mirrorlink=false
+vendor.audio.flac.sw.decoder.24bit=true
+vendor.audio.hal.boot.timeout.ms=20000
+vendor.audio.hal.output.suspend.supported=false
+vendor.audio.hw.aac.encoder=false
+vendor.audio.offload.buffer.size.kb=32
+vendor.audio.offload.gapless.enabled=true
+vendor.audio.offload.multiaac.enable=true
+vendor.audio.offload.multiple.enabled=false
+vendor.audio.offload.passthrough=false
+vendor.audio.offload.track.enable=false
+vendor.audio.parser.ip.buffer.size=262144
+vendor.audio.safx.pbe.enabled=false
+vendor.audio.spkcal.copy.inhal=true
+vendor.audio.tunnel.encode=false
+vendor.audio.usb.disable.sidetone=true
+vendor.audio.use.sw.alac.decoder=true
+vendor.audio.use.sw.ape.decoder=true
+vendor.audio.volume.headset.gain.depcal=true
+vendor.audio_hal.in_period_size=144
+vendor.audio_hal.period_multiplier=3
+vendor.audio_hal.period_size=192
+vendor.voice.path.for.pcm.voip=false
+
+# Bluetooth
+persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+persist.bluetooth.a2dp_offload.disabled=false
+persist.vendor.bt.aac_frm_ctl.enabled=false
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
+persist.vendor.qcom.bluetooth.enable.splita2dp=true
+persist.vendor.qcom.bluetooth.scram.enabled=true
+persist.vendor.qcom.bluetooth.soc=cherokee
+persist.vendor.qcom.bluetooth.twsp_state.enabled=false
+ro.bluetooth.a2dp_offload.supported=true
+ro.vendor.bluetooth.wipower=false
+vendor.bluetooth.soc=cherokee
+vendor.qcom.bluetooth.soc=cherokee
+
+# Camera
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snap,com.android.camera2
+
+# Charger
+ro.charger.enable_suspend=true
+
+# CNE
+persist.vendor.cne.feature=1
+
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.dm_default_key.options_format.version=2
+ro.crypto.volume.metadata.method=dm-default-key
+
+# Display
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.use_color_management=true
+ro.surface_flinger.wcg_composition_dataspace=143261696
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.vendor.display.ad=1
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.sensortype=2
+
+# DRM
+drm.service.enabled=true
+
+# FM
+vendor.hw.fm.init=0
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Gatekeeper
+vendor.gatekeeper.disable_spu=true
+
+# Graphics
+debug.egl.hw=0
+debug.sf.enable_advanced_sf_phase_offset=1
+debug.sf.enable_gl_backpressure=1
+debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
+debug.sf.high_fps_early_phase_offset_ns=-4000000
+debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
+debug.sf.hw=0
+persist.sys.sf.native_mode=1
+ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
+ro.hardware.egl=adreno
+ro.hardware.vulkan=adreno
+ro.opengles.version=196610
+vendor.display.comp_mask=0
+vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
+vendor.display.disable_decimation=1
+vendor.display.disable_excl_rect=0
+vendor.display.disable_inline_rotator=1
+vendor.display.disable_scaler=0
+vendor.display.disable_ui_3d_tonemap=1
+vendor.display.enable_default_color_mode=0
+vendor.display.enable_null_display=0
+vendor.display.enable_optimize_refresh=1
+
+# Listen
+ro.vendor.audio.soundtrigger=sva
+ro.vendor.audio.soundtrigger.cnn.adsp.level=27
+ro.vendor.audio.soundtrigger.cnn.level=27
+ro.vendor.audio.soundtrigger.gmm.adsp.level=50
+ro.vendor.audio.soundtrigger.gmm.level=50
+ro.vendor.audio.soundtrigger.gmm.user.adsp.level=10
+ro.vendor.audio.soundtrigger.gmm.user.level=10
+ro.vendor.audio.soundtrigger.lowpower=true
+ro.vendor.audio.soundtrigger.training.level=50
+ro.vendor.audio.soundtrigger.vop.adsp.level=10
+ro.vendor.audio.soundtrigger.vop.level=10
+ro.vendor.audio.soundtrigger.xanzn.cnn.level=25
+ro.vendor.audio.soundtrigger.xanzn.gmm.level=45
+ro.vendor.audio.soundtrigger.xanzn.gmm.user.level=50
+ro.vendor.audio.soundtrigger.xanzn.vop.level=20
+ro.vendor.audio.soundtrigger.xatx.cnn.level.high=27
+ro.vendor.audio.soundtrigger.xatx.cnn.level.low=27
+ro.vendor.audio.soundtrigger.xatx.cnn.level.medium=27
+ro.vendor.audio.soundtrigger.xatx.gmm.level.high=50
+ro.vendor.audio.soundtrigger.xatx.gmm.level.low=50
+ro.vendor.audio.soundtrigger.xatx.gmm.level.medium=50
+ro.vendor.audio.soundtrigger.xatx.gmm.user.level.high=10
+ro.vendor.audio.soundtrigger.xatx.gmm.user.level.low=10
+ro.vendor.audio.soundtrigger.xatx.gmm.user.level.medium=10
+ro.vendor.audio.soundtrigger.xatx.vop.level.high=10
+ro.vendor.audio.soundtrigger.xatx.vop.level.low=10
+ro.vendor.audio.soundtrigger.xatx.vop.level.medium=10
+
+# Media
+debug.stagefright.ccodec=1
+debug.stagefright.omx_default_rank=0
+
+# PASR
+vendor.power.pasr.enabled=false
+
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
+# Radio/RIL
+persist.radio.dynamic_sar=false
+persist.radio.multisim.config=dsds
+persist.radio.NO_STAPA=1
+persist.radio.VT_HYBRID_ENABLE=1
+persist.vendor.data.iwlan.enable=true
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.atfwd.start=true
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.data_ltd_sys_ind=1
+persist.vendor.radio.enableadvancedscan=true
+persist.vendor.radio.force_ltd_sys_ind=1
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.redir_party_num=1
+persist.vendor.radio.sar_sar_sensor=true
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+
+# System Shutdown
+sys.vendor.shutdown.waittime=500
+
+# WiFi
+wifi.aware.interface=wifi-aware0
+
