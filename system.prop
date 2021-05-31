@@ -11,6 +11,9 @@ persist.vendor.btstack.enable.twsplussho=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 
+# Camera
+persist.vendor.camera.facepp.fdenable=0
+
 # Display
 ro.sf.lcd_density=440
 ro.surface_flinger.set_display_power_timer_ms=1000
