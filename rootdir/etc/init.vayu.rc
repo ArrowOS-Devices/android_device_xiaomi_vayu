@@ -1,3 +1,6 @@
+on property:ro.boot.hwc=*
+    setprop vendor.boot.hwc ${ro.boot.hwc}
+
    # Disable some debug services
 on property:init.svc.cnss_diag=running
     stop cnss_diag
