@@ -139,6 +139,7 @@ BOARD_USES_METADATA_PARTITION := true
 VENDOR_SECURITY_PATCH := 2021-05-01
 
 # Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 TARGET_USES_INTERACTION_BOOST := true
 
 # Platform
