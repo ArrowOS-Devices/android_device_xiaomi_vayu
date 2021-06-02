@@ -159,9 +159,6 @@ on boot
 
     setprop wifi.interface wlan0
 
-    #enable camera read sensors data
-    setprop persist.camera.gyro.disable 0
-
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
