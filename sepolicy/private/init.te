@@ -9,5 +9,3 @@ allow init vendor_overlay_file:dir mounton;
 
 # Allow init to write to sysfs_graphics
 allow init sysfs_graphics:file w_file_perms;
-
-allow init vendor_sysfs_battery_supply:file { setattr };
