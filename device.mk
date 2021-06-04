@@ -289,7 +289,8 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.vayu
+    android.hardware.lights-service.qti \
+    lights.msmnile
 
 # Media
 PRODUCT_PACKAGES += \
@@ -330,10 +331,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
-
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.vayu \
+    android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.0.vendor \
     vendor.qti.hardware.perf@2.1.vendor \
     vendor.qti.hardware.perf@2.2.vendor
