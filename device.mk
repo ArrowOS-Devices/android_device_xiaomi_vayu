@@ -105,7 +105,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    GCamGOPrebuilt \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
@@ -513,5 +512,20 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libnl \
+    libwfdaac_vendor
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
+# Prebuilts GCam Go
+PRODUCT_PACKAGES += \
+    GCamGo
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/system/etc/permissions/com.google.android.apps.cameralite.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.apps.cameralite.xml
 
 include vendor/xiaomi/vayu/vayu-vendor.mk
