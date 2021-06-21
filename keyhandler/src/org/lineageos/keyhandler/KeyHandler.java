@@ -14,8 +14,7 @@ import com.android.internal.os.DeviceKeyHandler;
 
 public class KeyHandler implements DeviceKeyHandler {
     private static final String TAG = "KeyHandler";
-    private static final int KEYCODE_FP_GOODIX = 102;
-    private static final int KEYCODE_FP_FPC = 304;
+    private static final int KEYCODE_FOD = 102;
 
     public KeyHandler(Context context) {
         Log.i(TAG, "KeyHandler constructor called");
@@ -25,8 +24,7 @@ public class KeyHandler implements DeviceKeyHandler {
         int scanCode = event.getScanCode();
         Log.i(TAG, "handleKeyEvent=" + scanCode);
         switch (scanCode) {
-            case KEYCODE_FP_GOODIX:
-            case KEYCODE_FP_FPC:
+            case KEYCODE_FOD:
                 return null;
             default:
                 return event;
