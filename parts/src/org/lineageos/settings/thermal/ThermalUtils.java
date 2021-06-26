@@ -19,17 +19,11 @@ package org.lineageos.settings.thermal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.RemoteException;
 import android.os.UserHandle;
-import android.view.Display;
-import android.view.Surface;
-import android.view.WindowManager;
 
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.utils.FileUtils;
-
-import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 
 public final class ThermalUtils {
 
@@ -58,24 +52,10 @@ public final class ThermalUtils {
 
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
 
-    private boolean mTouchModeChanged;
-
-    private Display mDisplay;
-    private ITouchFeature mTouchFeature = null;
     private SharedPreferences mSharedPrefs;
 
     protected ThermalUtils(Context context) {
         mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        WindowManager mWindowManager = context.getSystemService(WindowManager.class);
-        mDisplay = mWindowManager.getDefaultDisplay();
-
-        try {
-            mTouchFeature = ITouchFeature.getService();
-        } catch (RemoteException e) {
-            // Do nothing
-        }
-
     }
 
     public static void startService(Context context) {
@@ -186,55 +166,5 @@ public final class ThermalUtils {
             }
         }
         FileUtils.writeLine(THERMAL_SCONFIG, state);
-
-        if (state == THERMAL_STATE_BENCHMARK || state == THERMAL_STATE_GAMING) {
-            updateTouchModes(packageName);
-        } else if (mTouchModeChanged) {
-            resetTouchModes();
-        }
-    }
-
-    private void updateTouchModes(String packageName) {
-        String values = mSharedPrefs.getString(packageName, null);
-        resetTouchModes();
-
-        if (values == null || values.isEmpty()) {
-            return;
-        }
-
-        String[] value = values.split(",");
-        int gameMode = Integer.parseInt(value[Constants.TOUCH_GAME_MODE]);
-        int touchResponse = Integer.parseInt(value[Constants.TOUCH_RESPONSE]);
-        int touchSensitivity = Integer.parseInt(value[Constants.TOUCH_SENSITIVITY]);
-        int touchResistant = Integer.parseInt(value[Constants.TOUCH_RESISTANT]);
-        int touchActiveMode = (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0)
-                ? 1 : 0;
-        try {
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
-        } catch (RemoteException e) {
-            // Do nothing
-        }
-
-        mTouchModeChanged = true;
-    }
-
-    protected void resetTouchModes() {
-        if (!mTouchModeChanged) {
-            return;
-        }
-
-        try {
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_GAME_MODE);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_TOLERANCE);
-            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_EDGE_FILTER);
-        } catch (RemoteException e) {
-            // Do nothing
-        }
-
-        mTouchModeChanged = false;
     }
 }
