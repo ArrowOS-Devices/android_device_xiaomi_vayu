@@ -10,5 +10,9 @@
   {
     "repository": "android_packages_apps_GCamGOPrebuilt",
     "target_path": "packages/apps/GCamGOPrebuilt"
+  },
+  {
+    "repository": "android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi"
   }
 ]
