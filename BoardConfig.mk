@@ -136,7 +136,7 @@ $(foreach p, CACHE $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_T
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 BOARD_USES_METADATA_PARTITION := true
-VENDOR_SECURITY_PATCH := 2021-05-01
+VENDOR_SECURITY_PATCH := 2021-03-01
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
