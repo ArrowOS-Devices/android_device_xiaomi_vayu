@@ -1,5 +1,0 @@
-# Allow hal_power_default to write to dt2w nodes
-binder_call(hal_power, hal_touchfeature_xiaomi_default)
-allow hal_power input_device:dir search;
-allow hal_power input_device:chr_file rw_file_perms;
-allow hal_power hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
