@@ -31,13 +31,10 @@ import /vendor/etc/init/hw/init.vayu.rc
 import /vendor/etc/init/init.mi_thermald.rc
 import /vendor/etc/init/init.batteryd.rc
 import /vendor/etc/init/init.batterysecret.rc
-import /vendor/etc/init/init.charge_logger.rc
-import /vendor/etc/init/init.mishow.ctl.rc
 
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_wcd9360 audio_hdmi audio_cs35l41 audio_tas2557 audio_tas256x audio_tfa98xx audio_machine_msmnile
     write /proc/sys/kernel/sched_boost 1
-    symlink /data/tombstones /tombstones
 
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
@@ -50,15 +47,13 @@ on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
+
     #change owner of white led
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/breath
-    #change owner of green led
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/green/breath
 
-# Add a cpuset for the camera daemon
-# We want all cores for camera
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
     write /dev/cpuset/camera-daemon/mems 0
@@ -113,14 +108,8 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/nnhal 0700 system system
-    chmod 0644 /dev/elliptic0
-    chmod 0644 /dev/elliptic1
     mkdir /data/vendor/misc/display 0771 system system
     mkdir /data/vendor/nfc 0770 nfc nfc
-    chmod 666 /sys/class/drm/card0-DSI-1/disp_count
-    chown system system /sys/class/drm/card0-DSI-1/dim_alpha
-    chown system system /sys/class/drm/card0-DSI-1/fod_ui_ready
-    chown system system /sys/class/drm/card0-DSI-1/dim_layer_enable
 
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
@@ -140,8 +129,6 @@ on property:ro.boot.dp=0x0
 on early-boot
     start vendor.sensors
 
-# For cpusets initialize for Silver Only first and then Silver + Gold
-# Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/kernel/hbtp/display_pwr
     chown system system /sys/kernel/qvr_external_sensor/fd
@@ -160,14 +147,8 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
-    chown system system /sys/class/thermal/thermal_message/sconfig
-
-
-    chown system system /proc/tp_selftest
-    chown system system /sys/class/touch/touch_dev/palm_sensor
-
-# Add a cpuset for the camera daemon
-# We want all cores for camera
+    # Add a cpuset for the camera daemon
+    # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
     write /dev/cpuset/camera-daemon/mems 0
@@ -175,13 +156,13 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-#palm_sensor
+    chown system system /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/touch/touch_dev/palm_sensor
 
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
     chown system system /dev/lirc0
     chmod 0660 /dev/lirc0
-#USB controller configuration
+
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -190,15 +171,8 @@ on boot
     setprop vendor.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
 
-    # Touchpanel
     chmod 0660 /sys/touchpanel/double_tap
     chown system system /sys/touchpanel/double_tap
-
-on property:vendor.display.lcd_density=560
-   setprop dalvik.vm.heapgrowthlimit 256m
-
-on property:vendor.display.lcd_density=640
-   setprop dalvik.vm.heapgrowthlimit 512m
 
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
@@ -206,16 +180,11 @@ on boot && property:persist.vendor.usb.controller.default=*
 on property:vendor.usb.controller=*
     setprop sys.usb.controller ${vendor.usb.controller}
 
-#Load WLAN driver
-    insmod /vendor/lib/modules/qca_cld3_wlan.ko
-
-#pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
     group system
 
-#Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
@@ -227,12 +196,6 @@ service vendor.per_proxy /vendor/bin/pm-proxy
     user system
     group system
     disabled
-
-on property:init.svc.vendor.per_mgr=running
-    start vendor.per_proxy
-
-on property:sys.shutdown.requested=*
-    stop vendor.per_proxy
 
 on charger
     mkdir /mnt/vendor/persist
@@ -264,63 +227,10 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service vendor.mdm_helper /vendor/bin/mdm_helper
-    class core
-    group system wakelock
-    disabled
-
-service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
-    class main
-    oneshot
-
-
-on property:vold.decrypt=trigger_restart_framework
-    start cnss_diag
-
-service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
-    class main
-    user system
-    group system wifi inet sdcard_rw media_rw diag
-    oneshot
-
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user system
     group system
-    oneshot
-
-service displayfeature /system/bin/displayfeature
-    class late_start
-    user root
-    group root
-
-service displaycount /vendor/bin/displaycount
-    class late_start
-    user system
-    group system
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
-    start displaycount
-
-on property:init.svc.surfaceflinger=stopped
-    stop displayfeature
-
-on property:init.svc.surfaceflinger=running
-    start displayfeature
-
-on property:init.svc.surfaceflinger=restarting
-    stop displayfeature
-
-service panel-info-sh /system/vendor/bin/sh /vendor/etc/init.panel_info.sh
-    class core
-    user root
-    oneshot
-
-service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
-    class core
-    user root
     oneshot
 
 service nv_mac /vendor/bin/nv_mac
@@ -339,13 +249,6 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
-service audioshell_service /vendor/bin/audioshell_service
-    oneshot
-    disabled
-
-on property:ro.vendor.miui.region=*
-    start audioshell_service
-
 on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
     copy /data/vendor/cit/tas2557_cal.txt /mnt/vendor/persist/audio/tas2557_cal.txt
@@ -363,30 +266,9 @@ on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
     chmod 666 /mnt/vendor/persist/audio/tas25xx_calib.bin
     chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
+
 service remosaic_daemon /system/vendor/bin/remosaic_daemon
    class late_start
    user camera
    group camera
 
-
-on post-fs-data
-    chmod 0666 /dev/migt
-    restorecon /dev/migt
-    chmod 0777 /sys/module/migt/parameters/migt_freq
-    restorecon /sys/module/migt/parameters/migt_freq
-    chmod 0777 /sys/module/migt/parameters/migt_ms
-    restorecon /sys/module/migt/parameters/migt_ms
-    chmod 0777 /sys/module/migt/parameters/migt_thresh
-    restorecon /sys/module/migt/parameters/migt_thresh
-    chmod 0777 /sys/module/migt/parameters/boost_policy
-    restorecon /sys/module/migt/parameters/boost_policy
-    chmod 0777 /sys/module/migt/parameters/fps_variance_ratio
-    restorecon /sys/module/migt/parameters/fps_variance_ratio
-    chmod 0777 /sys/module/migt/parameters/super_task_max_num
-    restorecon /sys/module/migt/parameters/super_task_max_num
-    chmod 0777 /sys/module/migt/parameters/migt_ceiling_freq
-    restorecon /sys/module/migt/parameters/migt_ceiling_freq
-    chmod 0777 /sys/module/migt/parameters/stask_candidate_num
-    restorecon /sys/module/migt/parameters/stask_candidate_num
-    chmod 0777 /sys/module/migt/parameters/fas_power_mod
-    restorecon /sys/module/migt/parameters/fas_power_mod
