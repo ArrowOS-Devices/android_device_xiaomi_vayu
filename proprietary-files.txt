@@ -187,6 +187,7 @@ vendor/lib64/libmi_supernight_raw.so
 vendor/lib64/libmi_supernight_raw_checker.so
 vendor/lib64/libmpbase.so
 vendor/lib64/librawnrv2_shared.so
+vendor/lib64/librelight_only.so
 vendor/lib64/libremosaiclib.so
 vendor/lib64/libremosaic_daemon.so
 vendor/lib64/libsdk_sr.so
