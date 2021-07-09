@@ -146,18 +146,41 @@ $(RFS_MSM_SLPI_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 
-EGL_SYMLINKS := $(TARGET_OUT_VENDOR)/lib/
-$(EGL_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	mkdir -p $@
-	$(hide) ln -sf egl/libEGL_adreno.so $@/libEGL_adreno.so
-	$(hide) ln -sf egl/libGLESv2_adreno $@/libGLESv2_adreno
+EGL_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libEGL_adreno.so
+$(EGL_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit EGL symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
 
+GLESv2_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libGLESv2_adreno.so
+$(GLESv2_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit GLESv2 symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
 
-EGL64_SYMLINKS := $(TARGET_OUT_VENDOR)/lib64/
-$(EGL64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	mkdir -p $@
-	$(hide) ln -sf egl/libEGL_adreno.so $@/libEGL_adreno.so
-	$(hide) ln -sf egl/libGLESv2_adreno $@/libGLESv2_adreno
+Q3DTOOLS_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libq3dtools_adreno.so
+$(Q3DTOOLS_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit Q3D Tools symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+EGL_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so
+$(EGL_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit EGL symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+GLESv2_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so
+$(GLESv2_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit GLESv2 symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+Q3DTOOLS_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so
+$(Q3DTOOLS_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit Q3DTools symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
 IMS_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT_APPS_PRIVILEGED)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
@@ -178,7 +201,8 @@ ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(BT_FIRMWARE_MOUNT_POI
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_APQ_GNSS_SYMLINKS) $(RFS_MDM_ADSP_SYMLINKS) $(RFS_MDM_CDSP_SYMLINKS)
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MDM_MPSS_SYMLINKS) $(RFS_MDM_SLPI_SYMLINKS) $(RFS_MDM_TN_SYMLINKS)
 ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_CDSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS) $(RFS_MSM_SLPI_SYMLINKS)
-ALL_DEFAULT_INSTALLED_MODULES += $(EGL_SYMLINKS) $(EGL64_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_32_SYMLINK) $(GLESv2_32_SYMLINK) $(Q3DTOOLS_32_SYMLINK)
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_64_SYMLINK) $(GLESv2_64_SYMLINK) $(Q3DTOOLS_64_SYMLINK)
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 ALL_DEFAULT_INSTALLED_MODULES += $(WIFI_FIRMWARE_SYMLINKS)
 
