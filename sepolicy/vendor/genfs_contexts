@@ -112,6 +112,7 @@ genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/wakeup               
 genfscon sysfs /devices/virtual/diag/diag/wakeup                                                                                                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd/wakeup                                                                                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/fastrpc/adsprpc-smd-secure/wakeup                                                                                  u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/input/input1/wakeup                                                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_aac/wakeup                                                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_alac/wakeup                                                                                               u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_amrnb/wakeup                                                                                              u:object_r:sysfs_wakeup:s0
@@ -126,3 +127,4 @@ genfscon sysfs /devices/virtual/misc/msm_multi_aac/wakeup                       
 genfscon sysfs /devices/virtual/misc/msm_qcelp/wakeup                                                                                              u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_wma/wakeup                                                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_wmapro/wakeup                                                                                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/884000.i2c/i2c-3/3-005a/wakeup                                                                                u:object_r:sysfs_wakeup:s0
