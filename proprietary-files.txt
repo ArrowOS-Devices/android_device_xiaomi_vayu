@@ -73,6 +73,7 @@ vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Audio libraries
 vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
