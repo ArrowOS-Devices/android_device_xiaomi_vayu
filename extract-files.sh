@@ -24,26 +24,6 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-function blob_fixup() {
-    case "${1}" in
-        system_ext/lib64/libwfdnative.so)
-            sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${2}"
-            ;;
-        product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-            sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-            ;;
-        vendor/etc/qdcm_calib_data_xiaomi_36_02_0a_video_mode_dsc_dsi_panel.xml | vendor/etc/qdcm_calib_data_xiaomi_42_02_0b_video_mode_dsc_dsi_panel.xml)
-            sed -i "s/dcip3/srgb/" "${2}"
-            ;;
-
-        vendor/lib64/hw/camera.qcom.so)
-            $PATCHELF_TOOL --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
-            $PATCHELF_TOOL --remove-needed "libmegface.so" "${2}"
-            $PATCHELF_TOOL --add-needed "libshim_megvii.so" "${2}"
-            ;;
-    esac
-}
-
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
@@ -91,6 +71,19 @@ fi
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
+
+function blob_fixup() {
+    case "${1}" in
+        vendor/etc/qdcm_calib_data_xiaomi_36_02_0a_video_mode_dsc_dsi_panel.xml | vendor/etc/qdcm_calib_data_xiaomi_42_02_0b_video_mode_dsc_dsi_panel.xml)
+            sed -i "s/dcip3/srgb/" "${2}"
+            ;;
+        vendor/lib64/hw/camera.qcom.so)
+            $PATCHELF_TOOL --remove-needed "libMegviiFacepp-0.5.2.so" "${2}"
+            $PATCHELF_TOOL --remove-needed "libmegface.so" "${2}"
+            $PATCHELF_TOOL --add-needed "libshim_megvii.so" "${2}"
+            ;;
+    esac
+}
 
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
