@@ -100,16 +100,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    GCamGOPrebuilt \
     libcamera2ndk_vendor \
     libgui_vendor \
     libxml2 \
     vendor.qti.hardware.camera.postproc@1.0.vendor
-
-ifeq ($(ARROW_GAPPS), true)
-PRODUCT_PACKAGES += GCamGOPrebuilt
-else
-PRODUCT_PACKAGES += Snap
-endif
 
 PRODUCT_PACKAGES += \
     libshim_megvii
