@@ -133,12 +133,6 @@ void vendor_load_properties() {
             fp_desc,
             "POCO", "bhima", "M2102J20SI");
         property_override("ro.product.mod_device", "bhima_global");
-    } else if (region == "GLOBAL") {
-        set_device_props(
-            fp,
-            fp_desc,
-            "POCO", "vayu", "M2102J20SG");
-        property_override("ro.product.mod_device", "vayu_global");
     } else {
         set_device_props(
             fp,
