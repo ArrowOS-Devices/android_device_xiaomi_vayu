@@ -387,10 +387,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# KeyHandler
-PRODUCT_PACKAGES += \
-    KeyHandler
-
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
