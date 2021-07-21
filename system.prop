@@ -2,6 +2,9 @@
 dalvik.vm.dex2oat-filter=everything
 dalvik.vm.image-dex2oat-filter=everything
 
+# Block OTA
+ro.block_updater=true
+
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
