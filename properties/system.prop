@@ -5,21 +5,13 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Camera
 camera.disable_zsl_mode=true
+persist.vendor.camera.facepp.fdenable=0
 
 # Charger
 ro.charger.disable_init_blank=true
 
 # CNE
 persist.vendor.cne.feature=1
-
-# Camera
-persist.vendor.camera.facepp.fdenable=0
-
-# Display
-ro.surface_flinger.set_display_power_timer_ms=1000
-ro.surface_flinger.set_idle_timer_ms=500
-ro.surface_flinger.set_touch_timer_ms=750
-ro.surface_flinger.use_content_detection_for_refresh_rate=true
 
 # DPM
 persist.vendor.dpm.feature=1

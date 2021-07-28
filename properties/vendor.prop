@@ -102,12 +102,6 @@ dalvik.vm.dex2oat-threads=8
 dalvik.vm.dex2oat64.enabled=true
 
 # Display
-ro.surface_flinger.has_wide_color_display=false
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.wcg_composition_dataspace=143261696
-ro.surface_flinger.protected_contents=true
-ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
 ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
@@ -135,7 +129,6 @@ ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 vendor.display.comp_mask=0
 vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 vendor.display.disable_decimation=1
@@ -175,7 +168,6 @@ ro.vendor.audio.soundtrigger.xatx.gmm.user.level.medium=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.high=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.low=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.medium=10
-
 
 # IMS
 persist.vendor.ims.disableADBLogs=1
