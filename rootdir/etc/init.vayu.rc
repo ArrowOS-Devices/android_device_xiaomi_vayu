@@ -1,11 +1,6 @@
 on init && property:ro.boot.hwc=GLOBAL
     setprop ro.boot.product.hardware.sku vayu
 
-    # Perf tuning
-on property:persist.sys.device_provisioned=1
-    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,7
-    setprop dalvik.vm.dex2oat-threads 6
-
 on property:ro.boot.product.hardware.sku=vayu
     enable vendor.nfc_hal_service
 
