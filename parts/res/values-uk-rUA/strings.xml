@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 The LineageOS Project
+     Copyright (C) 2020 The LineageOS Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -12,17 +12,26 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Dirac settings -->
-    <string name="dirac_title">Поліпшення звуку Mi</string>
-    <string name="dirac_summary">Поліпшити якість звуку</string>
-    <string name="dirac_headset_title">Тип навушників</string>
-    <string name="dirac_preset_title">Виберіть налаштування</string>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Профілі оптимізації</string>
+    <string name="thermal_summary">Встановити профілі оптимізації для оптимальної продуктивності застосунків</string>
+    <string name="thermal_default">За замовчуванням</string>
+    <string name="thermal_benchmark">Бенчмарк</string>
+    <string name="thermal_browser">Браузер</string>
+    <string name="thermal_camera">Камера</string>
+    <string name="thermal_dialer">Дзвінки</string>
+    <string name="thermal_gaming">Ігри</string>
+    <string name="thermal_streaming">Стриминг</string>
 
-    <!-- Dirac settings: Hi-Fi -->
+    <!-- Dirac settings -->
+    <string name="dirac_title">Поліпшення звуку Dirac</string>
+    <string name="dirac_headset_title">Тип гарнітури</string>
+    <string name="dirac_hifi_enable_title"> Увімкнути Hi-fi</string>
+    <string name="dirac_preset_title">Налаштування звуку</string>
+
     <string name="dirac_hifi_title">Hi-Fi</string>
     <string name="dirac_hifi_summary">Зменшити шум і спотворення, та поліпшити якість звуку</string>
 
-    <!-- Dirac settings: headset profiles -->
     <string name="dirac_headset_default">За замовчуванням</string>
     <string name="dirac_headset_earbuds">Mi Earbuds</string>
     <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
@@ -46,38 +55,20 @@
     <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
     <string name="dirac_headset_earphone">Mi Earphones</string>
 
-    <!-- Dirac settings: presets -->
     <string name="dirac_preset_default">За замовчуванням</string>
     <string name="dirac_preset_rock">Рок</string>
     <string name="dirac_preset_jazz">Джаз</string>
     <string name="dirac_preset_pop">Поп</string>
     <string name="dirac_preset_classical">Класика</string>
-    <string name="dirac_preset_hiphop">Хіп-Хоп</string>
+    <string name="dirac_preset_hiphop">Хіп-хоп</string>
     <string name="dirac_preset_blues">Блюз</string>
-    <string name="dirac_preset_electronic">Електронна</string>
+    <string name="dirac_preset_electronic">Електро</string>
     <string name="dirac_preset_country">Кантрі</string>
     <string name="dirac_preset_dance">Танцювальна</string>
     <string name="dirac_preset_metal">Метал</string>
 
-    <!-- Thermal Profiles -->
-    <string name="thermal_title">Профілі оптимізації</string>
-    <string name="thermal_summary">Встановити профілі оптимізації для оптимальної продуктивності застосунків</string>
-    <string name="thermal_default">За замовчуванням</string>
-    <string name="thermal_benchmark">Бенчмарк</string>
-    <string name="thermal_browser">Браузер</string>
-    <string name="thermal_camera">Камера</string>
-    <string name="thermal_dialer">Дзвінки</string>
-    <string name="thermal_gaming">Ігри</string>
-    <string name="thermal_youtube">Youtube</string>
-
-    <!-- Touch Control Settings -->
-    <string name="touch_control_title">Сенсорне керування</string>
-    <string name="touch_game_mode_title">Увімкнути ігровий режим</string>
-    <string name="touch_game_mode_summary">Збільшує частоту дискретизації сенсора до 180Hz</string>
-    <string name="touch_response_title">Відлік сенсора екрана</string>
-    <string name="touch_response_summary">Керування сенсорним відліком</string>
-    <string name="touch_sensitivity_title">Сенсорна чутливість</string>
-    <string name="touch_sensitivity_summary">Керує чутливістю дотику при повторному натискання</string>
-    <string name="touch_resistant_title">Краї сенсора</string>
-    <string name="touch_resistant_summary">Зменшує чутливість сенсора по краям, щоб запобігти помилковим натисканням</string>
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Очистка динаміку</string>
+    <string name="clear_speaker_summary">Вмикає 30 секундний звук, щоб очистити динамік</string>
+    <string name="clear_speaker_description">Запускає цю функцію один або жва рази, якщо ви виявили, що ваш динамік трішки забруднився пилом. А також установіть максимальну гучність мультимедіа.\n\nЯкщо динамік сильно забруднений, запустіть йю функцію 2-5 раз, при цьому струшуючи пристрій</string>
 </resources>
