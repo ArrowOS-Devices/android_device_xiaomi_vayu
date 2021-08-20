@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018,2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,25 +26,8 @@
 #
 
 on init
-    # Mount binderfs
-    mkdir /dev/binderfs
-    mount binder binder /dev/binderfs stats=global
-    chmod 0755 /dev/binderfs
-
-    symlink /dev/binderfs/binder /dev/binder
-    symlink /dev/binderfs/hwbinder /dev/hwbinder
-    symlink /dev/binderfs/vndbinder /dev/vndbinder
-
-    chmod 0666 /dev/binderfs/hwbinder
-    chmod 0666 /dev/binderfs/binder
-    chmod 0666 /dev/binderfs/vndbinder
-
     write /sys/class/backlight/panel0-backlight/brightness 200
-
     setprop sys.usb.configfs 1
-
-on property:ro.boot.usbconfigfs=false
-   setprop sys.usb.configfs 0
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}

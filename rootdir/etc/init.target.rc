@@ -30,6 +30,7 @@
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_wcd9360 audio_hdmi audio_cs35l41 audio_tas2557 audio_tas256x audio_tfa98xx audio_machine_msmnile
     write /proc/sys/kernel/sched_boost 1
+    symlink /data/tombstones /tombstones
 
 on init
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
@@ -80,10 +81,6 @@ on fs
     chmod 644 /mnt/vendor/persist/audio/us_manual_cal
     #+ add for watermark
     mkdir /mnt/vendor/persist/camera 0777 root root
-    mkdir /dev/logfs 0771 system system
-    mount vfat /dev/block/bootdevice/by-name/logfs /dev/logfs noatime umask=006,uid=1000,gid=1000
-    chown system system /dev/tiload_node
-    chmod 660 /dev/tiload_node
 
     swapon_all /vendor/etc/fstab.qcom
 
@@ -109,31 +106,22 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /data/vendor/nnhal 0700 system system
+
     mkdir /data/vendor/misc/display 0771 system system
     mkdir /data/vendor/nfc 0770 nfc nfc
 
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
-
-    chown system system /dev/tfa_reg
-    chown system system /dev/tfa_rw
-    chown system system /dev/tfa_rpc
-    chown system system /dev/tfa_control
-    chmod 0660 /dev/tfa_reg
-    chmod 0660 /dev/tfa_rw
-    chmod 0660 /dev/tfa_rpc
-    chmod 0660 /dev/tfa_control
-
-on property:ro.boot.dp=0x0
-    write /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/pshold_reboot 7
+    chown system system /sys/class/thermal/thermal_message/sconfig
 
 on early-boot
     start vendor.sensors
 
+# For cpusets initialize for Silver Only first and then Silver + Gold
+# Silver Only configuration cannot work with 0-7
 on boot
     chown system system /sys/kernel/hbtp/display_pwr
     chown system system /sys/kernel/qvr_external_sensor/fd
-    chown system system /sys/class/drm/card0-DSI-1/doze_backlight
     start rmt_storage
     start rfs_access
     write /dev/cpuset/top-app/cpus 0-3
@@ -148,8 +136,8 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
-    # Add a cpuset for the camera daemon
-    # We want all cores for camera
+# Add a cpuset for the camera daemon
+# We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
     write /dev/cpuset/camera-daemon/cpus 0-7
     write /dev/cpuset/camera-daemon/mems 0
@@ -157,13 +145,11 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-    chown system system /sys/class/thermal/thermal_message/sconfig
-    chown system system /sys/class/touch/touch_dev/palm_sensor
-
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
     chown system system /dev/lirc0
     chmod 0660 /dev/lirc0
 
+#USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -177,11 +163,13 @@ on boot
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
+#pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
     group system
 
+#Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
@@ -225,16 +213,23 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service vendor.energy-awareness /vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
+
+service vendor.lowi /vendor/bin/sscrpcd
+   class core
+   user system
+   group system wakelock
+   capabilities BLOCK_SUSPEND
 
 service nv_mac /vendor/bin/nv_mac
     class late_start
     user system
     group system inet net_admin wifi net_raw
+    oneshot
+
+service vendor.energy-awareness /vendor/bin/energy-awareness
+    class main
+    user system
+    group system
     oneshot
 
 service dcvs-sh /vendor/bin/init.qti.dcvs.sh
@@ -247,23 +242,13 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
-on property:vendor.audio.cit.spkcal.copy=true
-    copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
-    copy /data/vendor/cit/tas2557_cal.txt /mnt/vendor/persist/audio/tas2557_cal.txt
-    copy /data/vendor/cit/tas2557_chk.txt /mnt/vendor/persist/audio/tas2557_chk.txt
-    chmod 666 /mnt/vendor/persist/audio/tas2557_cal.bin
-    chmod 666 /mnt/vendor/persist/audio/tas2557_cal.txt
-    chmod 666 /mnt/vendor/persist/audio/tas2557_chk.txt
-    copy /data/vendor/cit/cs35l41_cal.bin /mnt/vendor/persist/audio/cs35l41_cal.bin
-    copy /data/vendor/cit/cs35l41_cal.txt /mnt/vendor/persist/audio/cs35l41_cal.txt
-    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.bin
-    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal.txt
-    copy /data/vendor/cit/tfa9894_chk.txt /mnt/vendor/persist/audio/tfa9894_chk.txt
-    chmod 666 /mnt/vendor/persist/audio/tfa9894_chk.txt
-    copy /data/vendor/cit/tas25xx_calib.bin /mnt/vendor/persist/audio/tas25xx_calib.bin
-    copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
-    chmod 666 /mnt/vendor/persist/audio/tas25xx_calib.bin
-    chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
+service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
+    override
+    class hal
+    interface android.hardware.contexthub@1.0::IContexthub default
+    user system
+    group system
+    disabled
 
 service remosaic_daemon /system/vendor/bin/remosaic_daemon
    class late_start
