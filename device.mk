@@ -353,8 +353,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock \
-    vendor.qti.hardware.perf@2.0.vendor \
-    vendor.qti.hardware.perf@2.1.vendor \
     vendor.qti.hardware.perf@2.2.vendor
 
 # Public libraries
@@ -366,8 +364,6 @@ include $(LOCAL_PATH)/properties/default.mk
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio@1.5 \
     libjson \
     libjson.vendor \
     libprotobuf-cpp-full \
@@ -454,11 +450,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    vendor.qti.hardware.wifi.hostapd@1.0.vendor \
-    vendor.qti.hardware.wifi.hostapd@1.1.vendor \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     libwpa_client \
     wpa_supplicant \
