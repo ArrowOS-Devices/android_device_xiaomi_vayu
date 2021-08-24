@@ -84,8 +84,6 @@ on fs
     chown system system /dev/tiload_node
     chmod 660 /dev/tiload_node
 
-    swapon_all /vendor/etc/fstab.qcom
-
     mkdir /mnt/vendor/persist/subsys 0770 root system
 
 on post-fs
@@ -178,6 +176,8 @@ on boot && property:persist.vendor.usb.controller.default=*
 
 on property:sys.boot_completed=1
     rm /data/unencrypted/zram_swap
+    swapon_all /vendor/etc/fstab.qcom
+    write /proc/sys/vm/swappiness 100
 
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
