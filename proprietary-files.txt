@@ -776,6 +776,7 @@ system_ext/lib64/libmmosal.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/system_properties.xml
+vendor/lib/libmmosal.so
 vendor/lib/libqcodec2.so
 vendor/lib64/libmmosal.so
 vendor/lib64/libqcodec2.so
@@ -1346,8 +1347,8 @@ vendor/lib/libFileMux_proprietary.so
 vendor/lib/libhdcp1prov.so
 vendor/lib/libhdcp2p2prov.so
 vendor/lib/libhdcpsrm.so
+vendor/lib/libmiracast.so
 vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libmmosal.so
 vendor/lib/libmmrtpdecoder_proprietary.so
 vendor/lib/libmmrtpencoder_proprietary.so
 vendor/lib/libwfdcodecv4l2_proprietary.so
@@ -1375,7 +1376,9 @@ vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libhdcp1prov.so
 vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
+vendor/lib64/libmiracast.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libwfddisplayconfig_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
+vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 
