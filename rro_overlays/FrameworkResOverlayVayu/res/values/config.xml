@@ -412,7 +412,7 @@
          If a non-zero value is set for config_defaultPeakRefreshRate, then
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
-    <integer name="config_defaultRefreshRate">120</integer>
+    <integer name="config_defaultRefreshRate">0</integer>
 
     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
          the framework from using higher refresh rates, even if display modes with higher refresh
