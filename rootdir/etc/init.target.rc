@@ -154,9 +154,6 @@ on boot
     setprop vendor.usb.qdss.inst.name "qdss"
     setprop vendor.usb.controller a600000.dwc3
 
-    chmod 0660 /sys/touchpanel/double_tap
-    chown system system /sys/touchpanel/double_tap
-
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
