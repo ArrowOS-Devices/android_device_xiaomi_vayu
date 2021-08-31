@@ -114,6 +114,7 @@ vendor.gatekeeper.disable_spu=true
 
 # Graphics
 debug.egl.hw=0
+debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
 debug.sf.hw=0
 persist.sys.sf.native_mode=0
@@ -127,9 +128,12 @@ vendor.display.disable_excl_rect=0
 vendor.display.disable_inline_rotator=1
 vendor.display.disable_scaler=0
 vendor.display.disable_ui_3d_tonemap=1
+vendor.display.disable_hw_recovery_dump=1
 vendor.display.enable_default_color_mode=0
+vendor.display.enable_force_split=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
+vendor.gralloc.disable_ubwc=0
 
 # Listen
 ro.vendor.audio.soundtrigger=sva
@@ -199,9 +203,6 @@ persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sar_sar_sensor=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.iwlan_operation_mode=legacy
-
-# SSR
-persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # System Shutdown
 sys.vendor.shutdown.waittime=500
