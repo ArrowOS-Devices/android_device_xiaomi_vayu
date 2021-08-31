@@ -40,6 +40,9 @@ debug.stagefright.ccodec=1
 # Memory optimizations
 ro.vendor.qti.sys.fw.bservice_enable=true
 
+# NFC
+ro.nfc.port=I2C
+
 # Netmgr
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
@@ -61,6 +64,7 @@ ro.telephony.default_network=33,22
 sys.fflag.override.settings_seamless_transfer=true
 
 # SSR
+persist.vendor.ssr.enable_ramdumps=1
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
 # Sensors
