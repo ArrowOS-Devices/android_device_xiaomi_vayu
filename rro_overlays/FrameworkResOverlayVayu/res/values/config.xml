@@ -309,8 +309,8 @@
 
     <!-- Minimum screen brightness setting allowed by power manager.
          The user is forbidden from setting the brightness below this level.
-         Equivalent to 2/255. -->
-    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.00784313725</item>
+         Equivalent to 1/255. -->
+    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.00392156862</item>
 
     <!-- Maximum screen brightness allowed by the power manager.
          The user is forbidden from setting the brightness above this level.  -->
