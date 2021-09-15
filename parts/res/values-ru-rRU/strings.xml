@@ -71,4 +71,8 @@
     <string name="clear_speaker_title">Очистка динамика</string>
     <string name="clear_speaker_summary">Включает 30 секундный звук, чтобы очистить динамик</string>
     <string name="clear_speaker_description">Запустите эту функцию один или два раза, если вы обнаружили что ваш динамик слегка загрязнен пылью. И также установите максимальную громкость мультимедиа.\n\nЕсли динамик сильно загрязнен, запустите эту функцию 2-5 раз, при этом встряхивая устройства</string>
+
+    <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Поднимите, чтобы разбудить</string>
+    <string name="raise_to_wake_gesture_summary">Разбудить устройство вместо пульсирующего уведомления</string>
 </resources>

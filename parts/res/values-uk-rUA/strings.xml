@@ -71,4 +71,8 @@
     <string name="clear_speaker_title">Очистка динаміку</string>
     <string name="clear_speaker_summary">Вмикає 30 секундний звук, щоб очистити динамік</string>
     <string name="clear_speaker_description">Запускає цю функцію один або жва рази, якщо ви виявили, що ваш динамік трішки забруднився пилом. А також установіть максимальну гучність мультимедіа.\n\nЯкщо динамік сильно забруднений, запустіть йю функцію 2-5 раз, при цьому струшуючи пристрій</string>
+
+    <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Підніміть, щоб розбудити</string>
+    <string name="raise_to_wake_gesture_summary">Розбудити пристрій замість пульсуючого </string>
 </resources>
