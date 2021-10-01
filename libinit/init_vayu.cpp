@@ -85,16 +85,8 @@ void load_dalvik_properties() {
     property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void set_device_props(const std::string fingerprint, const std::string description,
-        const std::string brand, const std::string device, const std::string model,
+void set_device_props(const std::string brand, const std::string device, const std::string model,
         const std::string name, const std::string marketname) {
-    const auto set_ro_build_prop = [](const std::string &source,
-                                      const std::string &prop,
-                                      const std::string &value) {
-        auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), true);
-    };
-
     const auto set_ro_product_prop = [](const std::string &source,
                                         const std::string &prop,
                                         const std::string &value) {
@@ -103,7 +95,6 @@ void set_device_props(const std::string fingerprint, const std::string descripti
     };
 
     for (const auto &source : ro_props_default_source_order) {
-        set_ro_build_prop(source, "fingerprint", fingerprint);
         set_ro_product_prop(source, "brand", brand);
         set_ro_product_prop(source, "device", device);
         set_ro_product_prop(source, "model", model);
@@ -111,10 +102,6 @@ void set_device_props(const std::string fingerprint, const std::string descripti
         set_ro_product_prop(source, "marketname", marketname);
     }
 
-    property_override("ro.build.fingerprint", fingerprint.c_str());
-    property_override("ro.build.description", description.c_str());
-    property_override("ro.bootimage.build.fingerprint", fingerprint.c_str());
-    property_override("ro.system_ext.build.fingerprint", fingerprint.c_str());
     property_override("ro.com.google.clientidbase", "android-xiaomi");
     property_override("ro.com.google.clientidbase.ax", "android-xiaomi-rvo3");
     property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rvo3");
@@ -124,22 +111,14 @@ void set_device_props(const std::string fingerprint, const std::string descripti
 }
 
 void vendor_load_properties() {
-//   SafetyNet workaround
-    char const fp[] = "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys";
-    char const fp_desc[] = "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys";
-
     string region = android::base::GetProperty("ro.boot.hwc", "");
 
     if (region == "INDIA") {
         set_device_props(
-            fp,
-            fp_desc,
             "POCO", "bhima", "M2102J20SI", "bhima_global", "POCO X3 Pro");
         property_override("ro.product.mod_device", "bhima_global");
     } else {
         set_device_props(
-            fp,
-            fp_desc,
             "POCO", "vayu", "M2102J20SG", "vayu_global", "POCO X3 Pro");
         property_override("ro.product.mod_device", "vayu_global");
     }
