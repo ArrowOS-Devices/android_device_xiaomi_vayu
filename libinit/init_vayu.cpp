@@ -101,13 +101,6 @@ void set_device_props(const std::string brand, const std::string device, const s
         set_ro_product_prop(source, "name", name);
         set_ro_product_prop(source, "marketname", marketname);
     }
-
-    property_override("ro.com.google.clientidbase", "android-xiaomi");
-    property_override("ro.com.google.clientidbase.ax", "android-xiaomi-rvo3");
-    property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rvo3");
-    property_override("ro.com.google.clientidbase.tx", "android-xiaomi-rvo3");
-    property_override("ro.com.google.clientidbase.vs", "android-xiaomi-rvo3");
-
 }
 
 void vendor_load_properties() {
