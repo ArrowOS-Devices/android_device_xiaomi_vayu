@@ -58,6 +58,7 @@ ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
+persist.sys.fflag.override.settings_provider_model=false
 ro.telephony.default_network=33,22
 
 # Seamless transfer
