@@ -22,11 +22,15 @@
     <!-- the padding on the top of the statusbar (usually 0) -->
     <dimen name="status_bar_padding_top">8dp</dimen>
     <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">12dp</dimen>
+    <dimen name="status_bar_padding_start">16dp</dimen>
     <!-- the padding on the end of the statusbar -->
-    <dimen name="status_bar_padding_end">12dp</dimen>
+    <dimen name="status_bar_padding_end">5dp</dimen>
+    <!-- Margin on the left side of the carrier text on Keyguard -->
+    <dimen name="keyguard_carrier_text_margin">25dp</dimen>
+    <!-- Margin on the right side of the system icon group on Keyguard. -->
+    <dimen name="system_icons_keyguard_padding_end">8dp</dimen>
     <!-- rounded corner content padding -->
-    <dimen name="rounded_corner_content_padding">7.0dip</dimen>
+    <dimen name="rounded_corner_content_padding">8dp</dimen>
 
     <dimen name="physical_power_button_center_screen_location_y">1020px</dimen>
     <dimen name="physical_fingerprint_sensor_center_screen_location_y">1020px</dimen>
