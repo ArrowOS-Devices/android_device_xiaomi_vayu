@@ -46,7 +46,3 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.dex2oat-threads=8
 endif
-
-# IORap
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.iorapd.enable=true

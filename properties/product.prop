@@ -11,6 +11,9 @@ persist.sys.sf.disable_blurs=1
 # Charger
 ro.charger.enable_suspend=true
 
+# IORap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+
 # LMKD
 ro.config.low_ram=false
 ro.lmk.log_stats=true
