@@ -55,16 +55,8 @@ vendor.voice.path.for.pcm.voip=false
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
-persist.vendor.bt.a2dp.aac_whitelist=false
-persist.vendor.bt.a2dp.mac_whitelist=false
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
 persist.vendor.bt.aac_frm_ctl.enabled=false
 persist.vendor.btsatck.absvolfeature=true
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
-persist.vendor.btstack.connect.peer_earbud=true
-persist.vendor.btstack.enable.splita2dp=true
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.btstack.enable.twsplussho=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
@@ -74,17 +66,10 @@ persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
-vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snap,com.android.camera2
-
-# Charger
-ro.charger.enable_suspend=true
-
-# CNE
-persist.vendor.cne.feature=1
 
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
@@ -166,12 +151,6 @@ ro.vendor.audio.soundtrigger.xatx.vop.level.high=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.low=10
 ro.vendor.audio.soundtrigger.xatx.vop.level.medium=10
 
-# IMS
-persist.vendor.ims.disableADBLogs=1
-persist.vendor.ims.disableDebugLogs=1
-persist.vendor.ims.disableIMSLogs=1
-persist.vendor.ims.disableQXDMLogs=1
-
 # Media
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
@@ -184,14 +163,10 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
 
 # Radio/RIL
-persist.radio.dynamic_sar=false
 persist.radio.multisim.config=dsds
-persist.radio.NO_STAPA=1
-persist.radio.VT_HYBRID_ENABLE=1
 persist.vendor.data.iwlan.enable=true
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.atfwd.start=true
-persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.data_ltd_sys_ind=1
 persist.vendor.radio.enableadvancedscan=true
@@ -203,7 +178,6 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sar_sar_sensor=true
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.iwlan_operation_mode=legacy
 
 # SoC

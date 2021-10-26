@@ -3,6 +3,17 @@ audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
+# Bluetooth
+persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+persist.vendor.btstack.connect.peer_earbud=true
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+vendor.bluetooth.soc=cherokee
+
 # Camera
 camera.disable_zsl_mode=true
 persist.vendor.camera.facepp.fdenable=0
@@ -26,6 +37,10 @@ ro.com.google.ime.kb_pad_port_b=1
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableDebugLogs=1
+persist.vendor.ims.disableIMSLogs=1
+persist.vendor.ims.disableQXDMLogs=1
 
 # IOP
 vendor.iop.enable_prefetch_ofr=1
@@ -58,7 +73,12 @@ ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
+persist.radio.dynamic_sar=false
+persist.radio.NO_STAPA=1
+persist.radio.VT_HYBRID_ENABLE=1
 persist.sys.fflag.override.settings_provider_model=false
+persist.vendor.radio.custom_ecc=1
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,22
 
 # Seamless transfer
