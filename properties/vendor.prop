@@ -102,7 +102,7 @@ vendor.gatekeeper.disable_spu=true
 # Graphics
 debug.egl.hw=0
 debug.mdpcomp.logs=0
-debug.sf.disable_backpressure=1
+debug.sf.enable_gl_backpressure=1
 debug.sf.hw=0
 persist.sys.sf.native_mode=0
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
