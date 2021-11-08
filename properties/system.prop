@@ -76,7 +76,6 @@ ro.vendor.qti.core_ctl_min_cpu=2
 persist.radio.dynamic_sar=false
 persist.radio.NO_STAPA=1
 persist.radio.VT_HYBRID_ENABLE=1
-persist.sys.fflag.override.settings_provider_model=false
 persist.vendor.radio.custom_ecc=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,22
