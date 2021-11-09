@@ -37,7 +37,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # https://docs.google.com/spreadsheets/d/1a_5cVNY3LUAkeg-yL56rYQNwved6Hy-dvEcKSxp6f8k/edit
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_advanced_sf_phase_offset=1 \
     debug.sf.use_phase_offsets_as_durations=1 \
     debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=16600000 \
