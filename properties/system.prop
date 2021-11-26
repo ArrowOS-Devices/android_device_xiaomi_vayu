@@ -17,6 +17,7 @@ vendor.bluetooth.soc=cherokee
 # Camera
 camera.disable_zsl_mode=true
 persist.vendor.camera.facepp.fdenable=0
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snap,com.android.camera2
 
 # Charger
 ro.charger.disable_init_blank=true
