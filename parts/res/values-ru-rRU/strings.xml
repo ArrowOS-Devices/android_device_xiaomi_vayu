@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2020 The LineageOS Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,6 +15,9 @@
      limitations under the License.
 -->
 <resources>
+     <!-- Ambient settings -->
+    <string name="ambient_enable">Использовать индикацию событий</string>
+     
     <!-- Thermal Profiles -->
     <string name="thermal_title">Профили оптимизации</string>
     <string name="thermal_summary">Установите профили оптимизации для оптимальной производительности приложений</string>
@@ -24,9 +30,11 @@
     <string name="thermal_streaming">Стриминг</string>
 
     <!-- Dirac settings -->
+    <string name="dirac_enable">Включить dirac</string>
     <string name="dirac_title">Улучшение звука Dirac</string>
+    <string name="dirac_summary">Оптимизация качества звука с помощью Dirac, Hi-Fi</string>
     <string name="dirac_headset_title">Тип гарнитуры</string>
-    <string name="dirac_hifi_enable_title"> Включить Hi-fi</string>
+    <string name="dirac_hifi_enable_title">Включить Hi-fi</string>
     <string name="dirac_preset_title">Настройки звука</string>
 
     <string name="dirac_hifi_title">Hi-Fi</string>
@@ -75,4 +83,5 @@
     <!-- Raise to wake strings-->
     <string name="raise_to_wake_gesture_title">Поднимите, чтобы разбудить</string>
     <string name="raise_to_wake_gesture_summary">Разбудить устройство вместо пульсирующего уведомления</string>
+     
 </resources>
