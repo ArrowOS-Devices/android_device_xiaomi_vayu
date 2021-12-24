@@ -28,7 +28,6 @@
         <!-- LLCCBW resource opcode, value-->
         <!-- L3 resource opcode, value-->
         <!-- GPU DISABLE resource opcode, value-->
-        <!-- GPU_MIN_POWER_LEVEL resource opcode, value-->
 
         <!-- Type="1", main launch boost of 2sec -->
         <Config
@@ -36,7 +35,7 @@
             Resources="0x40C00000, 0x1, 0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40804200, 0xFFF,
                        0x40800000, 0xFFF, 0x40800100, 0xFFF, 0x40800200, 0xFFF, 0x41800000, 0xFF,
                        0x40400000, 0x1, 0x42C10000, 0x1, 0x43000000, 0xFF, 0x43400000, 0xFFFF,
-                       0x4281C000, 2000, 0x42804000, 0x1" />
+                       0x4281C000, 2000" />
 
    <!--app resume boost-->
         <!-- SCHEDBOOST resource opcode, value-->
@@ -131,13 +130,13 @@
         <!-- CPUBOOST_MIN_FREQ PRIME CORE resource opcode, value -->
         <!-- SCHEDBOOST resource opcode, value-->
         <!-- L3_MEMLAT_MIN_FREQ resource opcode, value -->
-        <!-- GPU_MIN_POWER_LEVEL resource opcode, value-->
+        <!-- CPUBW_MIN_FREQ resource opcode, value-->
 
         <!-- Type="1", Vertical Scroll boost -->
         <Config
             Id="0x00001080" Type="1" Enable="true" Target="msmnile"
-            Resources="0x43000000, 0x19, 0x40800000, 1500, 0x40800100, 1500, 0x40800200, 1500,
-                       0x40C00000, 0x2, 0x43400000, 0x1F40, 0x42804000, 0x1" />
+            Resources="0x43000000, 0x19, 0x40800000, 1171, 0x40800100, 1476, 0x40800200, 1286,
+                       0x40C00000, 0x2, 0x43400000, 0x1F40, 0x41800000, 0xFF" />
 
     <!--Horizontal Scroll boost-->
         <!-- LLCBW_MIN_FREQ resource opcode, value-->
