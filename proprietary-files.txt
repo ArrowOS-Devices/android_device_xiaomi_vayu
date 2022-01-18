@@ -749,7 +749,7 @@ system_ext/lib/libmmosal.so
 system_ext/lib/libmmparser_lite.so
 system_ext/lib64/libmmosal.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
-vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
+vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|144d3730adda990a2fd5e1fdf65726dfe0c1f72c
 vendor/etc/system_properties.xml
 vendor/lib/libqcodec2.so
 vendor/lib64/libmmosal.so
@@ -757,7 +757,7 @@ vendor/lib64/libqcodec2.so
 
 # Neural networks
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc|1f23d052e24973b18f84304651bbbba1fb16c96c
 -vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti-hta.xml
 -vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
 vendor/lib64/libhexagon_nn_stub.so
@@ -1237,7 +1237,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Widevine DRM
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
-vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|12819f026a7568b02befb84ac1a656bb47e7d402
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/liboemcrypto.so
