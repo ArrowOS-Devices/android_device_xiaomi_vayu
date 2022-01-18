@@ -120,7 +120,6 @@ void vendor_load_properties() {
 
 //  SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
-    property_override("ro.oem_unlock_supported", "0");
 //  Enable transitional log for Privileged permissions
     property_override("ro.control_privapp_permissions", "log");
 }
