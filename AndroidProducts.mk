@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_vayu.mk
+    $(LOCAL_DIR)/ssos_vayu.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_vayu-eng \
-    arrow_vayu-userdebug \
-    arrow_vayu-user
+    ssos_vayu-eng \
+    ssos_vayu-userdebug \
+    ssos_vayu-user
