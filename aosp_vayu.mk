@@ -14,7 +14,7 @@ $(call inherit-product, device/xiaomi/vayu/device.mk)
 # Inherit common ArrowOS configurations
 $(call inherit-product, vendor/aosp//common.mk)
 
-PRODUCT_NAME := ssos_vayu
+PRODUCT_NAME := aosp_vayu
 PRODUCT_DEVICE := vayu
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := Poco X3 Pro
@@ -22,7 +22,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 #Arcana stuff
 TARGET_BOOT_ANIMATION_RES := 1080
-ARCANA_DEVICE := X00TD
+ARCANA_DEVICE := VAYU
 
 #Grapheneos camera
 TARGET_BUILD_GRAPHENEOS_CAMERA= true
