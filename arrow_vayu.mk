@@ -30,6 +30,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := Xiaomi/vayu_global/vayu:11/RKQ1.200826.002/V12.5.7.0.RJUMIXM:user/release-keys
 
 # ArrowOS additions
-DEVICE_MAINTAINER := kubersharma001
-$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+DEVICE_MAINTAINER := kubersharma001 & Justanuser sahil
+
 
