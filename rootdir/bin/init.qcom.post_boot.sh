@@ -673,9 +673,9 @@ else
             elif [ $MemTotal -lt 4194304 ]; then
                 echo "18432,23040,27648,38708,120640,144768" > /sys/module/lowmemorykiller/parameters/minfree
             elif [ $MemTotal -lt 6291456 ]; then
-                echo "18432,23040,27648,64512,190888,240792" > /sys/module/lowmemorykiller/parameters/minfree
+                echo "18432,23040,27648,64512,165888,225792" > /sys/module/lowmemorykiller/parameters/minfree
             else
-                echo "18432,23040,27648,85000,191250,241920" > /sys/module/lowmemorykiller/parameters/minfree
+                echo "18432,23040,27648,96768,276480,362880" > /sys/module/lowmemorykiller/parameters/minfree
             fi
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
@@ -4807,7 +4807,7 @@ case "$target" in
 	# configure input boost settings
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
-        echo "0:1785600 1:0 2:0 3:0 4:2419200 5:0 6:0 7:2956800" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+        echo "0:0 1:0 2:0 3:0 4:2323200 5:0 6:0 7:2323200" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
         echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
 	# Disable wsf, beacause we are using efk.
