@@ -102,6 +102,7 @@ debug.mdpcomp.logs=0
 debug.sf.enable_gl_backpressure=1
 debug.sf.hw=0
 debug.sf.predict_hwc_composition_strategy=0
+debug.sf.treat_170m_as_sRGB=1
 persist.sys.sf.native_mode=0
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
