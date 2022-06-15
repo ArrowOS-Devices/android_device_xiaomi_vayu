@@ -747,9 +747,6 @@
     <integer name="config_proximityCheckTimeout">3000</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
 
-    <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
-    <bool name="config_zramWriteback">true</bool>
-
     <!-- User activity timeout: Minimum screen off timeout in milliseconds.
          Sets a lower bound for the {@link Settings.System#SCREEN_OFF_TIMEOUT} setting
          which determines how soon the device will go to sleep when there is no
