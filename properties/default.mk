@@ -55,7 +55,3 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.dex2oat-filter=speed \
     dalvik.vm.dex2oat-threads=8
 endif
-
-# Disable remote keyguard animation
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.wm.enable_remote_keyguard_animation=0
