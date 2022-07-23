@@ -31,5 +31,4 @@ BUILD_FINGERPRINT := Xiaomi/vayu_global/vayu:12/RKQ1.200826.002/V13.0.3.0.SJUMIX
 
 # ArrowOS additions
 DEVICE_MAINTAINER := kubersharma001
-$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 
