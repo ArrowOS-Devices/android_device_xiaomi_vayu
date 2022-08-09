@@ -112,7 +112,7 @@ void vendor_load_properties() {
         property_override("ro.product.mod_device", "bhima_global");
     } else {
         set_device_props(
-            "POCO", "vayu", "M2102J20SI", "vayu_global", "POCO X3 Pro");
+            "POCO", "vayu", "M2102J20SG", "vayu_global", "POCO X3 Pro");
         property_override("ro.product.mod_device", "vayu_global");
     }
 
