@@ -1,4 +1,4 @@
-# All the proprietary files are extracted from miui_VAYUGlobal_V13.0.3.0.SJUMIXM_7d71e31adb_12.0.zip, unless pinned.
+# All the proprietary files are extracted from miui_VAYUGlobal_V13.0.5.0.SJUMIXM_7cc0b9ac86_12.0.zip, unless pinned.
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
