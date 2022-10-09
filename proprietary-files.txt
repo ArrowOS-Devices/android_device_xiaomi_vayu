@@ -82,10 +82,8 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
-vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
-vendor/lib/libaudioroute_ext.so
 vendor/lib/libdrc.so
 vendor/lib/libhdmipassthru.so
 vendor/lib/libqtigef.so
@@ -183,16 +181,12 @@ vendor/lib64/libremosaic_daemon.so
 vendor/lib64/libsdk_sr.so
 vendor/lib64/libSNPE.so
 vendor/lib64/libsnpe_dsp_domains_v2.so
-vendor/lib64/libsnsapi.so
-vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libsns_device_mode_stub.so
-vendor/lib64/libsns_fastRPC_util.so
 vendor/lib64/libsns_low_lat_stream_stub.so
 vendor/lib64/lib_sr_models.so
 vendor/lib64/libSuperSensor.so
 vendor/lib64/libSuperSensorCPU.so
 vendor/lib64/libswregistrationalgo.so
-vendor/lib64/libswvdec.so
 vendor/lib64/libsymphony-cpu.so
 vendor/lib64/libVDClearShot.so
 vendor/lib64/libvideoBokeh.so
@@ -952,9 +946,7 @@ vendor/etc/seccomp_policy/atfwd@2.0.policy
 vendor/lib64/deviceInfoServiceModule.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
-vendor/lib64/libmdmdetect.so
 vendor/lib64/libmdmimgload.so
-vendor/lib64/libminkdescriptor.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
 vendor/lib64/libnetmgr_nr_fusion.so
