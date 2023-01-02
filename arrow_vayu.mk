@@ -30,5 +30,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := Xiaomi/vayu_global/vayu:12/RKQ1.200826.002/V13.0.5.0.SJUMIXM:user/release-keys
 
 # ArrowOS additions
-DEVICE_MAINTAINER := kubersharma001, raghavt20
+DEVICE_MAINTAINER := K001droid and raghavt20
 
