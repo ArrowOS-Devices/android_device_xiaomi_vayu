@@ -1,9 +1,5 @@
 [
   {
-    "repository": "android_vendor_xiaomi_vayu",
-    "target_path": "vendor/xiaomi/vayu"
-  },
-  {
     "repository": "android_kernel_xiaomi_vayu",
     "target_path": "kernel/xiaomi/vayu"
   },
