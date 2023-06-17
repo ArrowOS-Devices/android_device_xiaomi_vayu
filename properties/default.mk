@@ -15,7 +15,6 @@
 #
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    debug.sf.frame_rate_multiple_threshold=120 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.has_HDR_display=true \
